@@ -1,1 +1,1 @@
-<a href="/">home</a>
+<h1>about</h1>

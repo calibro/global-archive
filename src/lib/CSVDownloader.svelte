@@ -15,12 +15,8 @@
 		const csvData = new Blob([`${bomCode}${csvContent}`], {
 			type: 'text/csv;charset=utf-8;'
 		});
-		let csvURL = null;
-		if (navigator.msSaveBlob) {
-			csvURL = navigator.msSaveBlob(csvData, `${filename}.csv`);
-		} else {
-			csvURL = window.URL.createObjectURL(csvData);
-		}
+		const csvURL = window.URL.createObjectURL(csvData);
+
 		const link = document.createElement('a');
 		link.href = csvURL;
 		link.setAttribute('download', `${filename}.csv`);
@@ -30,11 +26,11 @@
 </script>
 
 {#if type === 'link'}
-	<span on:click={download(data, filename, bom)} class="link">
+	<span on:click={() => download(data, filename, bom)} class="link">
 		<slot />
 	</span>
 {:else}
-	<button on:click={download(data, filename, bom)}>
+	<button on:click={() => download(data, filename, bom)}>
 		<slot />
 	</button>
 {/if}
