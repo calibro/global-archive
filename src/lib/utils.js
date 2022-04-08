@@ -1,9 +1,4 @@
-export const toggleElement = (elm, arr = []) => {
-	if (!arr || !elm) return;
-	const index = arr.findIndex((x) => x.id === elm.id);
-	index === -1 ? arr.push(elm) : arr.splice(index, 1);
-	return arr;
-};
+import Vibrant from 'node-vibrant';
 
 export const ATTRIBS = [
 	{ key: 'Keywords', multiple: true, group: true, table_name: 'Keywords' },
@@ -24,3 +19,17 @@ export const METADATA = [
 	'Type of sources',
 	'State/Nation'
 ];
+
+export const toggleElement = (elm, arr = []) => {
+	if (!arr || !elm) return;
+	const index = arr.findIndex((x) => x.id === elm.id);
+	index === -1 ? arr.push(elm) : arr.splice(index, 1);
+	return arr;
+};
+
+export async function getVibrantColor(url) {
+	if (!url) return;
+
+	const palette = await Vibrant.from(url).getPalette();
+	return palette['Vibrant'].getHex();
+}

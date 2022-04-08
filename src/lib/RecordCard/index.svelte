@@ -1,7 +1,8 @@
 <script>
-	import { groupsDict, bookmarks } from '$lib/stores';
+	import { groupsDict } from '$lib/stores';
 	import { timeDay } from 'd3-time';
 	import Bookmark from '$lib/Bookmark.svelte';
+	import ImgBg from '$lib/ImgBg.svelte';
 	export let record;
 
 	$: host_institution = $groupsDict['Host institution'].find(
@@ -10,6 +11,7 @@
 
 	const newRecord = timeDay.count(new Date(record['Created']), new Date()) <= 14;
 	let resourceImage;
+
 	if (record.Image && record.Image.length > 0) {
 		resourceImage = record.Image[0].thumbnails.large.url;
 	}
@@ -20,7 +22,9 @@
 		<span class="badge bg-secondary">New</span>
 	{/if}
 	{#if resourceImage}
-		<img class="img-fluid" src={resourceImage} alt={record['Name of collection']} />
+		<ImgBg url={resourceImage}>
+			<img class="img-fluid shadow" src={resourceImage} alt={record['Name of collection']} />
+		</ImgBg>
 	{/if}
 	<h3><a href={`/resource/${record.id}`}>{record['Name of collection']}</a></h3>
 	{#if host_institution}

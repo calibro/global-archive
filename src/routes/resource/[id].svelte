@@ -7,6 +7,7 @@
 	import ResourceTimeline from '$lib/ResourceTimeline.svelte';
 	import Responsive from '$lib/Responsive.svelte';
 	import Bookmark from '$lib/Bookmark.svelte';
+	import ImgBg from '$lib/ImgBg.svelte';
 </script>
 
 <div class="container">
@@ -17,6 +18,16 @@
 		<div class="row">
 			<div class="col-12">
 				<h1>{resource.fields['Name of collection']}</h1>
+				{#if resource.fields.Image && resource.fields.Image.length > 0}
+					<ImgBg url={resource.fields.Image[0].thumbnails.large.url}>
+						<img
+							class="img-fluid shadow"
+							src={resource.fields.Image[0].thumbnails.large.url}
+							alt={resource.fields['Name of collection']}
+						/>
+					</ImgBg>
+				{/if}
+				<a href={resource.fields['Link to collection']} target="_blank">open website</a>
 				<Bookmark record={resource} />
 				<p>{resource.fields['Brief description of collection']}</p>
 				{#each METADATA as meta}

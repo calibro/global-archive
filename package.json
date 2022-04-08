@@ -40,6 +40,7 @@
 		"d3-scale": "^4.0.2",
 		"d3-selection": "^3.0.0",
 		"d3-time": "^3.0.0",
+		"node-vibrant": "3.1.6",
 		"svelte-select": "^4.4.7",
 		"topojson-client": "^3.1.0"
 	}

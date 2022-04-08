@@ -1,6 +1,5 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
-import { isoImport } from 'vite-plugin-iso-import';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,10 +9,10 @@ const config = {
 	},
 	vite: {
 		optimizeDeps: {
-			exclude: ['@babichjacob/svelte-localstorage']
+			exclude: ['@babichjacob/svelte-localstorage', 'node-vibrant']
 		},
 		ssr: {
-			noExternal: ['@babichjacob/svelte-localstorage']
+			noExternal: ['@babichjacob/svelte-localstorage', 'node-vibrant']
 		}
 	}
 };
