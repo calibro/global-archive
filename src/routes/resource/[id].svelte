@@ -6,6 +6,7 @@
 	import ResourceMap from '$lib/ResourceMap/index.svelte';
 	import ResourceTimeline from '$lib/ResourceTimeline.svelte';
 	import Responsive from '$lib/Responsive.svelte';
+	import Bookmark from '$lib/Bookmark.svelte';
 </script>
 
 <div class="container">
@@ -16,6 +17,7 @@
 		<div class="row">
 			<div class="col-12">
 				<h1>{resource.fields['Name of collection']}</h1>
+				<Bookmark record={resource} />
 				<p>{resource.fields['Brief description of collection']}</p>
 				{#each METADATA as meta}
 					<div>

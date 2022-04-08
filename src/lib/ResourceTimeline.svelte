@@ -34,6 +34,7 @@
 		.range([0, chartWidth])
 		.nice();
 
+	// @ts-ignore
 	$: timeAxis = axisTop(x).tickSizeInner(tickSize).tickSizeOuter(0).tickPadding(-5);
 
 	onMount(() => {
