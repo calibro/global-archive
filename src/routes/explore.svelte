@@ -1,8 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { ascending, descending } from 'd3-array';
-	import { records, cfRecords, showFilters, groupsDict } from '$lib/stores';
-	import { fetchTable } from '$lib/api';
+	import { cfRecords, showFilters } from '$lib/stores';
 	import RecordCard from '$lib/RecordCard/index.svelte';
 	import Filters from '$lib/Filters/index.svelte';
 

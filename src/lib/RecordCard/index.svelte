@@ -5,9 +5,9 @@
 	import ImgBg from '$lib/ImgBg.svelte';
 	export let record;
 
-	$: host_institution = $groupsDict['Host institution'].find(
-		(d) => d.id === record['Host institution'][0]
-	);
+	$: host_institution =
+		$groupsDict['Host institution'] &&
+		$groupsDict['Host institution'].find((d) => d.id === record['Host institution'][0]);
 
 	const newRecord = timeDay.count(new Date(record['Created']), new Date()) <= 14;
 	let resourceImage;
