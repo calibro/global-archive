@@ -1,3 +1,95 @@
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 400.0;
+*
+* available axes:
+
+* 'wght' (range from 100.0 to 900.0)
+
+*/
+
+@font-face {
+	font-family: 'Switzer';
+	src: url('./fonts/Switzer-Variable.woff2') format('woff2'),
+		 url('./fonts/Switzer-Variable.woff') format('woff'),
+		 url('./fonts/Switzer-Variable.ttf') format('truetype');
+		 font-weight: 100 900;
+		 font-display: swap;
+		 font-style: normal;
+  }
+  
+  
+  /**
+  * This is a variable font
+  * You can controll variable axes as shown below:
+  * font-variation-settings: 'wght' 400.0;
+  *
+  * available axes:
+  
+  * 'wght' (range from 100.0 to 900.0)
+  
+  */
+  
+  @font-face {
+	font-family: 'Switzer';
+	src: url('./fonts/Switzer-VariableItalic.woff2') format('woff2'),
+		 url('./fonts/Switzer-VariableItalic.woff') format('woff'),
+		 url('./fonts/Switzer-VariableItalic.ttf') format('truetype');
+		 font-weight: 100 900;
+		 font-display: swap;
+		 font-style: italic;
+  }
+
+  /**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 300.0 'wght' 800.0;
+*
+* available axes:
+
+* 'wght' (range from 300.0 to 800.0)
+
+* 'wght' (range from 300.0 to 800.0)
+
+*/
+
+@font-face {
+	font-family: 'BespokeSerif';
+	src: url('./fonts/BespokeSerif-Variable.woff2') format('woff2'),
+		 url('./fonts/BespokeSerif-Variable.woff') format('woff'),
+		 url('./fonts/BespokeSerif-Variable.ttf') format('truetype');
+		 font-weight: 300 800;
+		 font-display: swap;
+		 font-style: normal;
+  }
+  
+  
+  /**
+  * This is a variable font
+  * You can controll variable axes as shown below:
+  * font-variation-settings: 'wght' 300.0 'wght' 800.0;
+  *
+  * available axes:
+  
+  * 'wght' (range from 300.0 to 800.0)
+  
+  * 'wght' (range from 300.0 to 800.0)
+  
+  */
+  
+  @font-face {
+	font-family: 'BespokeSerif';
+	src: url('./fonts/BespokeSerif-VariableItalic.woff2') format('woff2'),
+		 url('./fonts/BespokeSerif-VariableItalic.woff') format('woff'),
+		 url('./fonts/BespokeSerif-VariableItalic.ttf') format('truetype');
+		 font-weight: 300 800;
+		 font-display: swap;
+		 font-style: italic;
+  }
+  
+
 @import './variable.scss';
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 @import '../node_modules/bootstrap/scss/bootstrap';
@@ -9,6 +101,10 @@ body {
 	text-rendering: optimizeLegibility;
 	/* Support for Firefox. */
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.BespokeSerif{
+	font-family: 'BespokeSerif', Georgia, 'Times New Roman', Times, serif;
 }
 
 .cursor-pointer{
