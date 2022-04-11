@@ -20,6 +20,7 @@
 		endRange = range(event.detail.value + 1, endYear + 1).map((d) => {
 			return { value: d, label: d.toString() };
 		});
+		if (selectedStartYear.value === startYear && selectedEndYear.value === endYear) return;
 		updateCf(selectedStartYear.value, selectedEndYear.value);
 	}
 
@@ -27,6 +28,7 @@
 		startRange = range(startYear, event.detail.value).map((d) => {
 			return { value: d, label: d.toString() };
 		});
+		if (selectedStartYear.value === startYear && selectedEndYear.value === endYear) return;
 		updateCf(selectedStartYear.value, selectedEndYear.value);
 	}
 

@@ -49,6 +49,13 @@
 		update();
 	}
 
+	function resetFilterYears() {
+		$cfRecords.dims.get('Start year').filterAll();
+		$cfRecords.dims.get('End year').filterAll();
+		$active_filters['years'] = null;
+		update();
+	}
+
 	function resetFilterDimension(key, dim) {
 		dim.filterAll();
 		$active_filters[key] = null;
@@ -62,11 +69,8 @@
 			<YearPicker
 				{startYear}
 				{endYear}
-				on:resetCf={() => {
-					resetFilterDimension('years', $cfRecords.dims.get('Start year'));
-					resetFilterDimension('years', $cfRecords.dims.get('End year'));
-				}}
-				on:updateCf={filterYear}
+				on:resetCf={() => resetFilterYears()}
+				on:updateCf={(e) => filterYear(e)}
 			/>
 		{/if}
 	</div>

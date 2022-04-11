@@ -4,6 +4,7 @@
 	import { cfRecords, showFilters } from '$lib/stores';
 	import RecordCard from '$lib/RecordCard/index.svelte';
 	import Filters from '$lib/Filters/index.svelte';
+	import ActiveFilters from '$lib/ActiveFilters.svelte';
 
 	const sort_options = [
 		{ value: 'Created', label: 'Most recent' },
@@ -65,6 +66,7 @@
 	<div class="row align-items-center">
 		<div class="col-auto">
 			<p class="m-0">Displaying: {total} / {$cfRecords.size()} archives</p>
+			<ActiveFilters />
 		</div>
 		<div class="col-auto ms-auto d-flex align-items-center">
 			<label class="col-auto me-2" for="sort-select">Sort by:</label>

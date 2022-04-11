@@ -6,6 +6,8 @@
 	import { fetchTable } from '$lib/api';
 
 	import '../app.scss';
+
+	let loading = true;
 	onMount(async () => {
 		for (let a of ATTRIBS) {
 			if (a.group) {
@@ -31,8 +33,15 @@
 			console.log(resRecords[0]);
 			records.set(resRecords);
 		}
+		loading = false;
 	});
 </script>
 
 <Navbar />
-<slot />
+{#if loading}
+	<div class="container">
+		<p>loading...</p>
+	</div>
+{:else}
+	<slot />
+{/if}

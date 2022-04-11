@@ -19,7 +19,9 @@ export const cfRecords = derived(records, ($records, set) => {
 	});
 	const cs = crossfilter(flatRecords);
 
+	// @ts-ignore
 	cs.dims = new Map();
+	// @ts-ignore
 	cs.groups = new Map();
 
 	for (let a of ATTRIBS) {
@@ -30,10 +32,11 @@ export const cfRecords = derived(records, ($records, set) => {
 				return a.multiple ? [] : null;
 			}
 		}, a.multiple || false);
-
+		// @ts-ignore
 		cs.dims.set(a.key, dim);
 
 		if (a.group) {
+			// @ts-ignore
 			cs.groups.set(a.key, dim.group());
 		}
 	}
