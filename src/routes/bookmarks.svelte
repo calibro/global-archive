@@ -7,14 +7,23 @@
 </script>
 
 <div class="container">
-	<div class="row">
-		{#each records as record (record.id)}
-			<div class="col-3 my-2">
-				<RecordCard {record} />
+	{#if records.length}
+		<div class="row">
+			{#each records as record (record.id)}
+				<div class="col-3 my-2">
+					<RecordCard {record} />
+				</div>
+			{/each}
+		</div>
+		<div class="row">
+			<CSVDownloader data={records} filename={'global-archive-list.csv'}>Export list</CSVDownloader>
+		</div>
+	{:else}
+		<div class="row my-5">
+			<div class="col-12">
+				<h6 class="text-center">No archives bookmarked!</h6>
+				<p class="text-center">Go to <a href="/explore">explore</a> section</p>
 			</div>
-		{/each}
-	</div>
-	<div class="row">
-		<CSVDownloader data={records} filename={'global-archive-list.csv'}>Export list</CSVDownloader>
-	</div>
+		</div>
+	{/if}
 </div>

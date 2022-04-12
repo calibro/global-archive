@@ -40,10 +40,9 @@
 	{#if $showFilters}
 		<Filters />
 	{/if}
-	<div class="row align-items-center my-3">
+	<div class="row align-items-center mt-3">
 		<div class="col-auto">
-			<p class="m-0 BespokeSerif">Displaying: {total} / {$cfRecords.size()} archives</p>
-			<ActiveFilters />
+			<p class="my-0 BespokeSerif me-2">Displaying: {total} / {$cfRecords.size()} archives</p>
 		</div>
 		<div class="col-auto ms-auto d-flex align-items-center">
 			<label class="col-auto me-2 BespokeSerif" for="sort-select">Sort by:</label>
@@ -63,15 +62,21 @@
 		</div>
 	</div>
 	<div class="row">
-		{#if $view === 'grid'}
-			<GridView records={sorted_records} />
+		<div class="col-12">
+			<ActiveFilters />
+		</div>
+	</div>
+	<div class="row mt-2">
+		{#if sorted_records.length}
+			{#if $view === 'grid'}
+				<GridView records={sorted_records} />
+			{:else}
+				<ListView records={sorted_records} />
+			{/if}
 		{:else}
-			<ListView records={sorted_records} />
-		{/if}
-		<!-- {#each sorted_records as record (record.id)}
-			<div class="col-3 my-2">
-				<RecordCard {record} />
+			<div class="col-12">
+				<h6 class="text-center">No results! Remove some filters</h6>
 			</div>
-		{/each} -->
+		{/if}
 	</div>
 </div>

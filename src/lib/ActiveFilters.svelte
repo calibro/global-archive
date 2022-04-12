@@ -9,13 +9,13 @@
 		{#if values && values.length > 0}
 			{#each values as value}
 				{#if value}
-					<span class="badge rounded-pill bg-secondary"
+					<span class="badge rounded-pill bg-dark me-1"
 						>{$groupsDict[key] && $groupsDict[key].find((d) => d.id === value).fields.Name}</span
 					>
 				{/if}
 			{/each}
 		{:else if values}
-			<span class="badge rounded-pill bg-secondary">{values.start} - {values.end}</span>
+			<span class="badge rounded-pill bg-dark">{values.start} - {values.end}</span>
 		{/if}
 	{/each}
 </div>
