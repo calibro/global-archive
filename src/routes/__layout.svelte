@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import Navbar from '$lib/Navbar/index.svelte';
 	import { groupsDict, records } from '$lib/stores';
 	import { ATTRIBS } from '$lib/utils';
@@ -37,7 +38,10 @@
 	});
 </script>
 
-<Navbar />
+{#if $page.routeId}
+	<Navbar />
+{/if}
+
 {#if loading}
 	<div class="container">
 		<p>loading...</p>
