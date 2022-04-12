@@ -29,7 +29,7 @@
 		<path
 			d={path(feature)}
 			class="borderc"
-			fill={regions_concerned.includes(feature.properties.regions_concerned) ? 'yellow' : 'black'}
+			fill={regions_concerned.includes(feature.properties.regions_concerned) ? '#FFE000' : 'black'}
 		/>
 	{/each}
 </svg>
