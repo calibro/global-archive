@@ -3,7 +3,6 @@
 	import { groupsDict } from '$lib/stores';
 	import Bookmark from '$lib/Bookmark.svelte';
 	import { HEADERS } from '$lib/utils';
-	import { map } from 'd3-array';
 	export let records = [];
 </script>
 
