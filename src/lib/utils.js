@@ -20,6 +20,11 @@ export const METADATA = [
 	'State/Nation'
 ];
 
+export const HEADERS = [
+	{ label: 'Name of collection', multiple: false },
+	{ label: 'Host institution', multiple: true }
+];
+
 export const toggleElement = (elm, arr = []) => {
 	if (!arr || !elm) return;
 	const index = arr.findIndex((x) => x.id === elm.id);

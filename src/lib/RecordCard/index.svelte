@@ -17,18 +17,48 @@
 	}
 </script>
 
-<div class="p-2 border h-100">
+<div class="h-100 position-relative">
 	{#if newRecord}
-		<span class="badge bg-secondary">New</span>
+		<span class="new badge bg-light">New</span>
 	{/if}
 	{#if resourceImage}
 		<ImgBg url={resourceImage}>
-			<img class="img-fluid shadow" src={resourceImage} alt={record['Name of collection']} />
+			<img class="img-fluid shadow thumb" src={resourceImage} alt={record['Name of collection']} />
 		</ImgBg>
 	{/if}
-	<h3><a href={`/resource/${record.id}`}>{record['Name of collection']}</a></h3>
-	{#if host_institution}
-		<h6>{host_institution.fields['Name']}</h6>
-	{/if}
-	<Bookmark {record} />
+	<div class="d-flex my-2 w-100">
+		<div class="me-1">
+			<h5 class="title">
+				<a class="text-decoration-none text-body" href={`/resource/${record.id}`}
+					>{record['Name of collection']}</a
+				>
+			</h5>
+			{#if host_institution}
+				<h6 class="fst-italic host">{host_institution.fields['Name']}</h6>
+			{/if}
+		</div>
+		<div class="ms-auto">
+			<Bookmark {record} />
+		</div>
+	</div>
 </div>
+
+<style>
+	.title,
+	.host {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.thumb {
+		height: 160px;
+		width: auto;
+	}
+
+	.new {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
+</style>

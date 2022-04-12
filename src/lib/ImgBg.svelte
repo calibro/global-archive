@@ -4,17 +4,22 @@
 	export let url;
 
 	let bgHex;
-	// const color = async () => {
-	// 		bgHex = await getVibrantColor(url);
-	// 	};
-
-	//     color()
 
 	onMount(async () => {
 		bgHex = await getVibrantColor(url);
 	});
 </script>
 
-<div class="w-100 p-3" style={`background-color:${bgHex}`}>
+<div
+	class="bg w-100 p-3 d-flex aligh-items-center justify-content-center"
+	style={`background-color:${bgHex}`}
+>
 	<slot />
 </div>
+
+<style>
+	.bg {
+		background-color: white;
+		transition: background-color 0.5s;
+	}
+</style>
