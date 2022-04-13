@@ -1,4 +1,5 @@
-import Vibrant from 'node-vibrant';
+//import Vibrant from 'node-vibrant';
+import * as Vibrant from 'node-vibrant';
 
 export const ATTRIBS = [
 	{ key: 'Keywords', multiple: true, group: true, table_name: 'Keywords' },
