@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import logo from '$lib/assets/logo.svg';
 </script>
 
@@ -7,7 +8,8 @@
 		class="flex-grow-1 flex-shrink-1 d-flex flex-column align-items-center justify-content-center"
 	>
 		<h1 class="text-primary title text-center mb-5">Global Archives Online</h1>
-		<a role="button" class="btn btn-primary btn-lg rounded-pill" href="/explore">Explore</a>
+		<a role="button" class="btn btn-primary btn-lg rounded-pill" href={`${base}/explore`}>Explore</a
+		>
 	</div>
 	<div class="flex-grow-0 flex-shrink-0 bg-dark text-white">
 		<div class="container">

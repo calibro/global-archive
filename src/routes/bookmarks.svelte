@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import CSVDownloader from '$lib/CSVDownloader.svelte';
 	import { bookmarks } from '$lib/stores';
 	import RecordCard from '$lib/RecordCard/index.svelte';
@@ -22,7 +23,7 @@
 		<div class="row my-5">
 			<div class="col-12">
 				<h6 class="text-center">No archives bookmarked!</h6>
-				<p class="text-center">Go to <a href="/explore">explore</a> section</p>
+				<p class="text-center">Go to <a href={`${base}/explore`}>explore</a> section</p>
 			</div>
 		</div>
 	{/if}

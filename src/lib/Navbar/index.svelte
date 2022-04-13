@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import logo_symbol from '$lib/assets/logo_symbol.svg';
 	import { page } from '$app/stores';
 	import { view, showFilters } from '$lib/stores';
@@ -12,7 +13,7 @@
 	<div class="container-fluid">
 		<a
 			class="navbar-brand border border-dark rounded-pill px-3 py-2 fw-bold d-flex align-items-center"
-			href="/"
+			href={`${base}/`}
 			><img src={logo_symbol} class="me-1" alt="logo symbol" height="30" />Global Archives Online</a
 		>
 		<button class="navbar-toggler" type="button">
@@ -24,26 +25,28 @@
 					<a
 						class="nav-link"
 						class:active={$page.url.pathname.startsWith('/explore')}
-						href="/explore">Explore</a
+						href={`${base}/explore`}>Explore</a
 					>
 				</li>
 				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/suggest')}>
 					<a
 						class="nav-link"
 						class:active={$page.url.pathname.startsWith('/suggest')}
-						href="/suggest">Suggest</a
+						href={`${base}/suggest`}>Suggest</a
 					>
 				</li>
 				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/bookmarks')}>
 					<a
 						class="nav-link"
 						class:active={$page.url.pathname.startsWith('/bookmarks')}
-						href="/bookmarks">Bookmarks</a
+						href={`${base}/bookmarks`}>Bookmarks</a
 					>
 				</li>
 				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/about')}>
-					<a class="nav-link" class:active={$page.url.pathname.startsWith('/about')} href="/about"
-						>About</a
+					<a
+						class="nav-link"
+						class:active={$page.url.pathname.startsWith('/about')}
+						href={`${base}/about`}>About</a
 					>
 				</li>
 			</ul>

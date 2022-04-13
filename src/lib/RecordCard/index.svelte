@@ -3,6 +3,7 @@
 	import { timeDay } from 'd3-time';
 	import Bookmark from '$lib/Bookmark.svelte';
 	import ImgBg from '$lib/ImgBg.svelte';
+	import { base } from '$app/paths';
 	export let record;
 
 	$: host_institution =
@@ -29,7 +30,7 @@
 	<div class="d-flex my-2 w-100">
 		<div class="me-1">
 			<h5 class="title">
-				<a class="text-decoration-none text-body" href={`/resource/${record.id}`}
+				<a class="text-decoration-none text-body" href={`${base}/resource/${record.id}`}
 					>{record['Name of collection']}</a
 				>
 			</h5>

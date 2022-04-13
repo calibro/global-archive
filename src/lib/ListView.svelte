@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { groupsDict } from '$lib/stores';
 	import Bookmark from '$lib/Bookmark.svelte';
@@ -20,7 +21,7 @@
 			</thead>
 			<tbody>
 				{#each records as record (record.id)}
-					<tr class="line cursor-pointer" on:click={() => goto(`/resource/${record.id}`)}>
+					<tr class="line cursor-pointer" on:click={() => goto(`${base}/resource/${record.id}`)}>
 						{#each HEADERS as header}
 							{#if header.multiple}
 								<td class="fst-italic border-dark"
