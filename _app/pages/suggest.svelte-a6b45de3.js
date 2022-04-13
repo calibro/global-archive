@@ -1,0 +1,23 @@
+import{S as lt,i as rt,s as nt,e as o,t as d,k as D,c as a,a as i,h as u,d as e,m as I,b as s,g as ct,H as t,J as K}from"../chunks/vendor-df57af0d.js";function ht(st){let r,f,c,v,S,G,m,h,M,O,l,g,V,z,N,p,A,T,W,b,k,C,J,y,x,j,B,_,w,F;return{c(){r=o("div"),f=o("div"),c=o("div"),v=o("h1"),S=d(`Global Archives Online will benefit from your suggestions for open access digital
+				collections. Any suggestions relevant for the fields of global, colonial, or imperial
+				history are welcome.`),G=D(),m=o("div"),h=o("a"),M=d("Submit"),O=D(),l=o("div"),g=o("div"),V=o("h5"),z=d(`This means that the material you suggest is of value of the study of interaction,
+				(dis-)connectivity, or mobility of people, ideas, or long-term processes with
+				larger-than-local consequences.`),N=D(),p=o("div"),A=o("h5"),T=d(`When suggesting digital collections from national archives or large organizations, make sure
+				to frame it around specific collection or corpus of material appropriate rather than its
+				host institution.`),W=D(),b=o("div"),k=o("h5"),C=d(`Make sure to fill in all obligatory fields accurate and up-to-date in the format required by
+				the online form. Metadata should be provided in English, however, the description of
+				collection and comments in the blog can also added in the language of the host institution
+				possible or the specific archival corpus.`),J=D(),y=o("div"),x=o("h5"),j=d(`Note that resources must be open without embargo or limitation (collections that are partly
+				open or hosted by commercial actors may be included).`),B=D(),_=o("div"),w=o("h6"),F=d(`After submitting the form, the Global Archives Online team will evaluate your suggestion
+				and, if relevant, add it to the portal within two weeks.`),this.h()},l(H){r=a(H,"DIV",{class:!0});var E=i(r);f=a(E,"DIV",{class:!0});var L=i(f);c=a(L,"DIV",{class:!0});var q=i(c);v=a(q,"H1",{class:!0});var P=i(v);S=u(P,`Global Archives Online will benefit from your suggestions for open access digital
+				collections. Any suggestions relevant for the fields of global, colonial, or imperial
+				history are welcome.`),P.forEach(e),G=I(q),m=a(q,"DIV",{class:!0});var Q=i(m);h=a(Q,"A",{role:!0,class:!0,href:!0});var R=i(h);M=u(R,"Submit"),R.forEach(e),Q.forEach(e),q.forEach(e),L.forEach(e),O=I(E),l=a(E,"DIV",{class:!0});var n=i(l);g=a(n,"DIV",{class:!0});var U=i(g);V=a(U,"H5",{});var X=i(V);z=u(X,`This means that the material you suggest is of value of the study of interaction,
+				(dis-)connectivity, or mobility of people, ideas, or long-term processes with
+				larger-than-local consequences.`),X.forEach(e),U.forEach(e),N=I(n),p=a(n,"DIV",{class:!0});var Y=i(p);A=a(Y,"H5",{});var Z=i(A);T=u(Z,`When suggesting digital collections from national archives or large organizations, make sure
+				to frame it around specific collection or corpus of material appropriate rather than its
+				host institution.`),Z.forEach(e),Y.forEach(e),W=I(n),b=a(n,"DIV",{class:!0});var $=i(b);k=a($,"H5",{});var tt=i(k);C=u(tt,`Make sure to fill in all obligatory fields accurate and up-to-date in the format required by
+				the online form. Metadata should be provided in English, however, the description of
+				collection and comments in the blog can also added in the language of the host institution
+				possible or the specific archival corpus.`),tt.forEach(e),$.forEach(e),J=I(n),y=a(n,"DIV",{class:!0});var et=i(y);x=a(et,"H5",{});var ot=i(x);j=u(ot,`Note that resources must be open without embargo or limitation (collections that are partly
+				open or hosted by commercial actors may be included).`),ot.forEach(e),et.forEach(e),B=I(n),_=a(n,"DIV",{class:!0});var at=i(_);w=a(at,"H6",{class:!0});var it=i(w);F=u(it,`After submitting the form, the Global Archives Online team will evaluate your suggestion
+				and, if relevant, add it to the portal within two weeks.`),it.forEach(e),at.forEach(e),n.forEach(e),E.forEach(e),this.h()},h(){s(v,"class","display-2"),s(h,"role","button"),s(h,"class","btn btn-primary btn-lg rounded-pill"),s(h,"href","#"),s(m,"class","text-center my-4"),s(c,"class","col-12"),s(f,"class","row my-3"),s(g,"class","col-3"),s(p,"class","col-3"),s(b,"class","col-3"),s(y,"class","col-3"),s(w,"class","text-center my-3 fst-italic"),s(_,"class","col-12"),s(l,"class","row"),s(r,"class","container")},m(H,E){ct(H,r,E),t(r,f),t(f,c),t(c,v),t(v,S),t(c,G),t(c,m),t(m,h),t(h,M),t(r,O),t(r,l),t(l,g),t(g,V),t(V,z),t(l,N),t(l,p),t(p,A),t(A,T),t(l,W),t(l,b),t(b,k),t(k,C),t(l,J),t(l,y),t(y,x),t(x,j),t(l,B),t(l,_),t(_,w),t(w,F)},p:K,i:K,o:K,d(H){H&&e(r)}}}class ut extends lt{constructor(r){super();rt(this,r,null,ht,nt,{})}}export{ut as default};
