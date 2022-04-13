@@ -1,4 +1,4 @@
-import Vibrant from 'node-vibrant/lib/browser';
+import Vibrant from 'node-vibrant/lib/browser.js';
 
 export const ATTRIBS = [
 	{ key: 'Keywords', multiple: true, group: true, table_name: 'Keywords' },
