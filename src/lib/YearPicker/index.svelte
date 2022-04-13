@@ -57,26 +57,46 @@
 	}
 </script>
 
-<div class="d-flex align-items-center ">
+<div class="d-flex align-items-center themed">
 	<div class="me-2">Period:</div>
-	<Select
-		placeholder="From"
-		bind:items={startRange}
-		bind:value={selectedStartYear}
-		on:select={handleSelectStart}
-		isClearable={false}
-		noOptionsMessage="Year out of range"
-	/>
+	<div class="select">
+		<Select
+			placeholder="From"
+			bind:items={startRange}
+			bind:value={selectedStartYear}
+			on:select={handleSelectStart}
+			isClearable={false}
+			noOptionsMessage="Year out of range"
+		/>
+	</div>
 	<div class="mx-2">-</div>
-	<Select
-		placeholder="to"
-		items={endRange}
-		bind:value={selectedEndYear}
-		on:select={handleSelectEnd}
-		isClearable={false}
-		noOptionsMessage="Year out of range"
-	/>
+	<div class="select">
+		<Select
+			placeholder="to"
+			items={endRange}
+			bind:value={selectedEndYear}
+			on:select={handleSelectEnd}
+			isClearable={false}
+			noOptionsMessage="Year out of range"
+		/>
+	</div>
+
 	{#if $active_filters['years']}
 		<div class="ms-2 cursor-pointer" on:click={reset}><i class="bi bi-eraser" /></div>
 	{/if}
 </div>
+
+<style>
+	.themed {
+		--borderFocusColor: var(--bs-primary);
+		--borderHoverColor: var(--bs-primary);
+		--itemActiveBackground: var(--bs-primary);
+		--itemIsActiveBG: var(--bs-primary);
+		--itemHoverBG: var(--bs-gray-200);
+		--itemIsActiveColor: var(--bs-body-color);
+	}
+
+	.select {
+		flex: 0 0 90px;
+	}
+</style>

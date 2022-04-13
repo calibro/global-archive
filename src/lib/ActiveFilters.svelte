@@ -2,7 +2,6 @@
 	import { active_filters, groupsDict } from '$lib/stores';
 
 	$: filters = [...Object.entries($active_filters)];
-	$: console.log($active_filters);
 </script>
 
 <div>

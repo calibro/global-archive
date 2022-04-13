@@ -47,7 +47,11 @@
 					>
 				</li>
 			</ul>
-			<div class="btn-group me-2" role="group">
+			<div
+				class="btn-group me-3"
+				class:invisible={!$page.url.pathname.startsWith('/explore')}
+				role="group"
+			>
 				<input
 					bind:group={$view}
 					type="radio"
@@ -57,8 +61,12 @@
 					autocomplete="off"
 					value="grid"
 				/>
-				<label class="btn btn-outline-dark customBorderLeft py-2" for="btnradio1">Grid</label>
-
+				<label
+					class="cursor-pointer"
+					class:text-decoration-underline={$view === 'grid'}
+					for="btnradio1">Grid</label
+				>
+				<span class="mx-1">/</span>
 				<input
 					bind:group={$view}
 					type="radio"
@@ -68,10 +76,15 @@
 					autocomplete="off"
 					value="list"
 				/>
-				<label class="btn btn-outline-dark customBorderRight py-2" for="btnradio2">List</label>
+				<label
+					class="cursor-pointer"
+					class:text-decoration-underline={$view === 'list'}
+					for="btnradio2">List</label
+				>
 			</div>
 			<button
 				class="btn btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center"
+				class:invisible={!$page.url.pathname.startsWith('/explore')}
 				on:click={() => toggleFilters()}
 				><span class="me-1">Filters</span><i
 					class="bi d-flex"
@@ -87,19 +100,5 @@
 	.customActive {
 		background-color: var(--bs-primary);
 		border-radius: 50rem !important;
-	}
-
-	.customBorderLeft {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-		border-top-left-radius: 50rem;
-		border-bottom-left-radius: 50rem;
-	}
-
-	.customBorderRight {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-		border-top-right-radius: 50rem;
-		border-bottom-right-radius: 50rem;
 	}
 </style>

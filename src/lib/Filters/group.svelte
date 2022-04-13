@@ -38,7 +38,7 @@
 </script>
 
 <div class="groupContainer">
-	<div class="d-flex mb-2 bg-white position-sticky top-0">
+	<div class="title d-flex mb-2 bg-white position-sticky top-0">
 		{group[0]}
 		<div
 			class="cursor-pointer ms-auto"
@@ -77,13 +77,23 @@
 		margin-right: 30px;
 	}
 
+	.title {
+		z-index: 1;
+	}
+
 	.facet {
+		border: 1px solid var(--bs-gray-200);
 		background-color: var(--bs-gray-200);
 		transition: all 0.2s ease-in-out;
 	}
 
+	.facet:hover {
+		border: 1px solid var(--bs-dark);
+	}
+
 	.facet.active {
 		background-color: var(--bs-primary);
+		border: 1px solid var(--bs-primary);
 	}
 
 	.facet.disabled {

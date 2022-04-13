@@ -1,8 +1,8 @@
 <script>
+	import { slide } from 'svelte/transition';
 	import YearPicker from '$lib/YearPicker/index.svelte';
 	import Group from './group.svelte';
 	import { cfRecords, active_filters } from '$lib/stores';
-	import { dirty_components } from 'svelte/internal';
 
 	$: cfGroups = [...Array.from($cfRecords.groups)];
 
@@ -84,7 +84,7 @@
 	}
 </script>
 
-<div class="border border-dark rounded my-2 p-4">
+<div class="border border-dark rounded my-2 p-4" transition:slide>
 	{#if startYear && endYear}
 		<YearPicker
 			{startYear}

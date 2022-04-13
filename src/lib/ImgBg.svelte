@@ -20,6 +20,6 @@
 <style>
 	.bg {
 		background-color: white;
-		transition: background-color 0.5s;
+		transition: background-color 0.2s linear;
 	}
 </style>

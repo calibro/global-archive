@@ -4,13 +4,10 @@ import crossfilter from 'crossfilter2';
 import { ATTRIBS } from './utils';
 
 export const records = writable([]);
-export const host_institutions = writable([]);
-export const region_concerned = writable([]);
-export const state_nation = writable([]);
 export const groupsDict = writable({});
 export const active_filters = writable({});
 export const view = writable('grid');
-export const showFilters = writable(true);
+export const showFilters = writable(false);
 export const bookmarks = localStorageStore('gao_bookmarks', []);
 
 export const cfRecords = derived(records, ($records, set) => {
