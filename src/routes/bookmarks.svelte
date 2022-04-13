@@ -22,7 +22,7 @@
 	{:else}
 		<div class="row my-5">
 			<div class="col-12">
-				<h6 class="text-center">No archives bookmarked!</h6>
+				<h6 class="text-center">No collections bookmarked!</h6>
 				<p class="text-center">Go to <a href={`${base}/explore`}>explore</a> section</p>
 			</div>
 		</div>

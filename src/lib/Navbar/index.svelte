@@ -4,7 +4,6 @@
 	import { page } from '$app/stores';
 	import { view, showFilters } from '$lib/stores';
 
-	$: console.log($page);
 	function toggleFilters() {
 		showFilters.update((d) => !d);
 	}
