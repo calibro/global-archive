@@ -38,7 +38,7 @@ export async function getVibrantColor(url) {
 
 	// const palette = await Vibrant.from(url).getPalette();
 
-	let v = new Vibrant(url, {});
+	let v = new Vibrant(url, { filters: [] });
 	const palette = await v.getPalette();
 	return palette['Vibrant'].getHex();
 }
