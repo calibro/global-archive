@@ -1,5 +1,4 @@
-//import Vibrant from 'node-vibrant';
-import * as Vibrant from 'node-vibrant';
+import Vibrant from 'node-vibrant/lib/browser';
 
 export const ATTRIBS = [
 	{ key: 'Keywords', multiple: true, group: true, table_name: 'Keywords' },
@@ -36,9 +35,9 @@ export const toggleElement = (elm, arr = []) => {
 export async function getVibrantColor(url) {
 	if (!url) return;
 
-	// const palette = await Vibrant.from(url).getPalette();
+	const palette = await Vibrant.from(url).getPalette();
 
-	let v = new Vibrant(url, { filters: [] });
-	const palette = await v.getPalette();
+	// let v = new Vibrant(url, { filters: [] });
+	// const palette = await v.getPalette();
 	return palette['Vibrant'].getHex();
 }
