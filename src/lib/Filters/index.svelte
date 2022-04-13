@@ -111,25 +111,4 @@
 		overflow-x: auto;
 		overflow-y: hidden;
 	}
-
-	.groupContainer {
-		height: 100%;
-		overflow-y: auto;
-		flex: 0 0 300px;
-		margin-right: 30px;
-	}
-
-	.facet {
-		background-color: var(--bs-gray-200);
-		transition: all 0.2s ease-in-out;
-	}
-
-	.facet.active {
-		background-color: var(--bs-primary);
-	}
-
-	.facet.disabled {
-		opacity: 0.5;
-		pointer-events: none;
-	}
 </style>
