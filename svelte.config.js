@@ -14,10 +14,10 @@ const config = {
 	},
 	vite: {
 		optimizeDeps: {
-			exclude: ['@babichjacob/svelte-localstorage', 'node-vibrant']
+			exclude: ['@babichjacob/svelte-localstorage']
 		},
 		ssr: {
-			noExternal: ['@babichjacob/svelte-localstorage', 'node-vibrant']
+			noExternal: ['@babichjacob/svelte-localstorage']
 		}
 	}
 };
