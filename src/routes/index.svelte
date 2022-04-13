@@ -17,11 +17,13 @@
 				<div class="col-3"><img class="img-fluid" alt="logo" src={logo} /></div>
 				<div class="col-9">
 					<p class="BespokeSerif my-0">
-						Global Archives Online is intended as a tool to locate and use resources for historical
-						research on colonial and global history from the fifteenth to the twenty-first century.
-						It will provide students and researchers anywhere in the world with an overview of major
-						digital collections of primary sources, including published sources, digitized archival
-						material as well as “born-digital” sources.
+						A directory of open digital collections for the study of colonial and global history.
+						Global Archives Online is designed to identify and locate open resources for the study
+						of and research on colonial and global history. Aimed primarily at students and
+						researchers interested in imperial, colonial and global history, the directory provides
+						users anywhere in the world with an overview of major digital collections of a variety
+						of primary sources, including digitized manuscripts, newspapers, books, pamphlets, maps,
+						images and audio-visual material.
 					</p>
 				</div>
 			</div>
