@@ -1,4 +1,4 @@
-name: Deploy V-Data
+name: Deploy Global Archive
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for tagged versions
 on:
@@ -38,6 +38,8 @@ jobs:
 
       - name: Build app
         run: yarn build
+        env:
+          VITE_AIRTABLE_API_KEY: ${{ secrets.VITE_AIRTABLE_API_KEY }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
