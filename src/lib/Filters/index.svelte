@@ -84,23 +84,25 @@
 	}
 </script>
 
-<div class="border border-dark rounded my-2 p-4" transition:slide>
-	{#if startYear && endYear}
-		<YearPicker
-			{startYear}
-			{endYear}
-			on:resetCf={() => resetFilterYears()}
-			on:updateCf={(e) => filterYear(e)}
-		/>
-	{/if}
-	<div class="groupsContainer mt-3 d-inline-flex">
-		{#each cfGroups as group}
-			<Group
-				{group}
-				on:filterCf={(e) => filterDimension(e.detail.key, e.detail.dim, e.detail.value)}
-				on:resetCf={(e) => resetFilterDimension(e.detail.key, e.detail.dim)}
+<div class="border border-dark rounded my-2 " transition:slide>
+	<div class="px-4 pt-4">
+		{#if startYear && endYear}
+			<YearPicker
+				{startYear}
+				{endYear}
+				on:resetCf={() => resetFilterYears()}
+				on:updateCf={(e) => filterYear(e)}
 			/>
-		{/each}
+		{/if}
+		<div class="groupsContainer mt-3 d-inline-flex">
+			{#each cfGroups as group}
+				<Group
+					{group}
+					on:filterCf={(e) => filterDimension(e.detail.key, e.detail.dim, e.detail.value)}
+					on:resetCf={(e) => resetFilterDimension(e.detail.key, e.detail.dim)}
+				/>
+			{/each}
+		</div>
 	</div>
 </div>
 
