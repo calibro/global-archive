@@ -4,6 +4,7 @@
 	import { page } from '$app/stores';
 	import { view, showFilters } from '$lib/stores';
 
+	$: console.log($page);
 	function toggleFilters() {
 		showFilters.update((d) => !d);
 	}
@@ -21,38 +22,38 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mx-auto mb-2 mb-lg-0 border border-dark rounded-pill px-1 py-1 ">
-				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/explore')}>
+				<li class="nav-item px-3" class:customActive={$page.routeId.startsWith('explore')}>
 					<a
 						class="nav-link"
-						class:active={$page.url.pathname.startsWith('/explore')}
+						class:active={$page.routeId.startsWith('explore')}
 						href={`${base}/explore`}>Explore</a
 					>
 				</li>
-				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/bookmarks')}>
+				<li class="nav-item px-3" class:customActive={$page.routeId.startsWith('bookmarks')}>
 					<a
 						class="nav-link"
-						class:active={$page.url.pathname.startsWith('/bookmarks')}
+						class:active={$page.routeId.startsWith('bookmarks')}
 						href={`${base}/bookmarks`}>Bookmarks</a
 					>
 				</li>
-				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/about')}>
+				<li class="nav-item px-3" class:customActive={$page.routeId.startsWith('about')}>
 					<a
 						class="nav-link"
-						class:active={$page.url.pathname.startsWith('/about')}
+						class:active={$page.routeId.startsWith('about')}
 						href={`${base}/about`}>About</a
 					>
 				</li>
-				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/suggest')}>
+				<li class="nav-item px-3" class:customActive={$page.routeId.startsWith('suggest')}>
 					<a
 						class="nav-link"
-						class:active={$page.url.pathname.startsWith('/suggest')}
+						class:active={$page.routeId.startsWith('suggest')}
 						href={`${base}/suggest`}>Suggest</a
 					>
 				</li>
 			</ul>
 			<div
 				class="btn-group me-3"
-				class:invisible={!$page.url.pathname.startsWith('/explore')}
+				class:invisible={!$page.routeId.startsWith('explore')}
 				role="group"
 			>
 				<input
@@ -87,7 +88,7 @@
 			</div>
 			<button
 				class="btn btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center"
-				class:invisible={!$page.url.pathname.startsWith('/explore')}
+				class:invisible={!$page.routeId.startsWith('explore')}
 				on:click={() => toggleFilters()}
 				><span class="me-1">Filters</span><i
 					class="bi d-flex"
