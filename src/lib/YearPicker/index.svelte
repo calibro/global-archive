@@ -1,4 +1,5 @@
 <script>
+	import { active_filters } from '$lib/stores';
 	import { createEventDispatcher } from 'svelte';
 	import Select from 'svelte-select';
 	import { range } from 'd3-array';
@@ -56,20 +57,26 @@
 	}
 </script>
 
-<Select
-	placeholder="From"
-	bind:items={startRange}
-	bind:value={selectedStartYear}
-	on:select={handleSelectStart}
-	isClearable={false}
-	noOptionsMessage="Year out of range"
-/>
-<Select
-	placeholder="to"
-	items={endRange}
-	bind:value={selectedEndYear}
-	on:select={handleSelectEnd}
-	isClearable={false}
-	noOptionsMessage="Year out of range"
-/>
-<div on:click={reset}>reset</div>
+<div class="d-flex align-items-center ">
+	<div class="me-2">Period:</div>
+	<Select
+		placeholder="From"
+		bind:items={startRange}
+		bind:value={selectedStartYear}
+		on:select={handleSelectStart}
+		isClearable={false}
+		noOptionsMessage="Year out of range"
+	/>
+	<div class="mx-2">-</div>
+	<Select
+		placeholder="to"
+		items={endRange}
+		bind:value={selectedEndYear}
+		on:select={handleSelectEnd}
+		isClearable={false}
+		noOptionsMessage="Year out of range"
+	/>
+	{#if $active_filters['years']}
+		<div class="ms-2 cursor-pointer" on:click={reset}><i class="bi bi-eraser" /></div>
+	{/if}
+</div>

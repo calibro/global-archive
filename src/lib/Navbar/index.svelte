@@ -19,7 +19,7 @@
 			<span class="navbar-toggler-icon" />
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mx-auto mb-2 mb-lg-0 border border-dark rounded-pill px-3 ">
+			<ul class="navbar-nav mx-auto mb-2 mb-lg-0 border border-dark rounded-pill px-1 py-1 ">
 				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/explore')}>
 					<a
 						class="nav-link"

@@ -1,6 +1,8 @@
 <script>
 	import YearPicker from '$lib/YearPicker/index.svelte';
-	import { groupsDict, cfRecords, active_filters } from '$lib/stores';
+	import Group from './group.svelte';
+	import { cfRecords, active_filters } from '$lib/stores';
+	import { dirty_components } from 'svelte/internal';
 
 	$: cfGroups = [...Array.from($cfRecords.groups)];
 
@@ -13,18 +15,25 @@
 
 	function update() {
 		cfGroups = [...Array.from($cfRecords.groups)];
-		console.log($active_filters);
 	}
 
 	function filterDimension(key, dim, value) {
 		if (!$active_filters[key]) {
-			$active_filters[key] = [value];
+			active_filters.update((d) => {
+				d[key] = [value];
+				return d;
+			});
 		} else {
 			const index = $active_filters[key].findIndex((d) => d === value);
-			index === -1 ? $active_filters[key].push(value) : $active_filters[key].splice(index, 1);
+			active_filters.update((d) => {
+				index === -1 ? d[key].push(value) : d[key].splice(index, 1);
+				if (!d[key].length) delete d[key];
+				return d;
+			});
+			//index === -1 ? $active_filters[key].push(value) : $active_filters[key].splice(index, 1);
 		}
 
-		if ($active_filters[key].length) {
+		if ($active_filters[key] && $active_filters[key].length) {
 			dim.filterFunction((d) => {
 				return $active_filters[key].includes(d);
 			});
@@ -36,7 +45,10 @@
 	}
 
 	function filterYear(e) {
-		$active_filters['years'] = e.detail;
+		active_filters.update((d) => {
+			d['years'] = e.detail;
+			return d;
+		});
 
 		$cfRecords.dims.get('Start year').filterFunction((d) => {
 			return d >= e.detail.start;
@@ -52,49 +64,72 @@
 	function resetFilterYears() {
 		$cfRecords.dims.get('Start year').filterAll();
 		$cfRecords.dims.get('End year').filterAll();
-		$active_filters['years'] = null;
+		//$active_filters['years'] = null;
+		active_filters.update((d) => {
+			delete d['years'];
+			return d;
+		});
 		update();
 	}
 
 	function resetFilterDimension(key, dim) {
 		dim.filterAll();
-		$active_filters[key] = null;
+		// $active_filters[key] = null;
+		active_filters.update((d) => {
+			delete d[key];
+			//d[key] = null;
+			return d;
+		});
 		update();
 	}
 </script>
 
-<div class="border my-2 p-2">
-	<div>
-		{#if startYear && endYear}
-			<YearPicker
-				{startYear}
-				{endYear}
-				on:resetCf={() => resetFilterYears()}
-				on:updateCf={(e) => filterYear(e)}
-			/>
-		{/if}
-	</div>
-	<div class="my-5 d-flex">
+<div class="border border-dark rounded my-2 p-4">
+	{#if startYear && endYear}
+		<YearPicker
+			{startYear}
+			{endYear}
+			on:resetCf={() => resetFilterYears()}
+			on:updateCf={(e) => filterYear(e)}
+		/>
+	{/if}
+	<div class="groupsContainer mt-3 d-inline-flex">
 		{#each cfGroups as group}
-			<div class="mx-2">
-				{group[0]}
-				{group[1].size()}
-				<div on:click={() => resetFilterDimension(group[0], $cfRecords.dims.get(group[0]))}>
-					reset
-				</div>
-				<ul>
-					{#each group[1].all() as elm}
-						{@const label = $groupsDict[group[0]].find((d) => d.id === elm.key)}
-						<li
-							on:click={() => {
-								filterDimension(group[0], $cfRecords.dims.get(group[0]), elm.key);
-							}}
-						>
-							{label.fields.Name} - {elm.value}
-						</li>
-					{/each}
-				</ul>
-			</div>
+			<Group
+				{group}
+				on:filterCf={(e) => filterDimension(e.detail.key, e.detail.dim, e.detail.value)}
+				on:resetCf={(e) => resetFilterDimension(e.detail.key, e.detail.dim)}
+			/>
 		{/each}
 	</div>
 </div>
+
+<style>
+	.groupsContainer {
+		height: 250px;
+		width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	.groupContainer {
+		height: 100%;
+		overflow-y: auto;
+		flex: 0 0 300px;
+		margin-right: 30px;
+	}
+
+	.facet {
+		background-color: var(--bs-gray-200);
+		transition: all 0.2s ease-in-out;
+	}
+
+	.facet.active {
+		background-color: var(--bs-primary);
+	}
+
+	.facet.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+</style>
