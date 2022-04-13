@@ -28,13 +28,6 @@
 						href={`${base}/explore`}>Explore</a
 					>
 				</li>
-				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/suggest')}>
-					<a
-						class="nav-link"
-						class:active={$page.url.pathname.startsWith('/suggest')}
-						href={`${base}/suggest`}>Suggest</a
-					>
-				</li>
 				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/bookmarks')}>
 					<a
 						class="nav-link"
@@ -47,6 +40,13 @@
 						class="nav-link"
 						class:active={$page.url.pathname.startsWith('/about')}
 						href={`${base}/about`}>About</a
+					>
+				</li>
+				<li class="nav-item px-3" class:customActive={$page.url.pathname.startsWith('/suggest')}>
+					<a
+						class="nav-link"
+						class:active={$page.url.pathname.startsWith('/suggest')}
+						href={`${base}/suggest`}>Suggest</a
 					>
 				</li>
 			</ul>
