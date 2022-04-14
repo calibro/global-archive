@@ -42,6 +42,7 @@
 		"d3-selection": "^3.0.0",
 		"d3-time": "^3.0.0",
 		"node-vibrant": "3.1.6",
+		"svelte-canvas": "^0.7.1",
 		"svelte-select": "^4.4.7",
 		"sveltestrap": "^5.9.0",
 		"topojson-client": "^3.1.0"

@@ -1,14 +1,30 @@
 <script>
+	import Responsive from '$lib/Responsive.svelte';
+	import HomeBg from '$lib/HomeBg/index.svelte';
 	import { base } from '$app/paths';
 	import logo from '$lib/assets/logo.svg';
 </script>
 
 <div class="w-100 h-100 d-flex flex-column">
 	<div
-		class="flex-grow-1 flex-shrink-1 d-flex flex-column align-items-center justify-content-center"
+		class="flex-grow-1 flex-shrink-1 d-flex flex-column align-items-center justify-content-center position-relative"
 	>
-		<h1 class="text-primary title text-center mb-3">Global<br />Archives<br />Online</h1>
-		<a role="button" class="btn btn-primary btn-lg rounded-pill" href={`${base}/explore`}>Explore</a
+		<div
+			class="position-absolute top-0 left-0 w-100 h-100 overflow-hidden bg-dark d-block"
+			style={'z-index:0'}
+		>
+			<Responsive>
+				<HomeBg />
+			</Responsive>
+		</div>
+		<h1 class="text-primary title text-center mb-3" style={'z-index:1'}>
+			Global<br />Archives<br />Online
+		</h1>
+		<a
+			role="button"
+			class="btn btn-primary btn-lg rounded-pill"
+			style={'z-index:1'}
+			href={`${base}/explore`}>Explore</a
 		>
 	</div>
 	<div class="flex-grow-0 flex-shrink-0 bg-dark text-white">
