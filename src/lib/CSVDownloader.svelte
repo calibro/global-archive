@@ -27,18 +27,16 @@
 
 {#if type === 'link'}
 	<span on:click={() => download(data, filename, bom)} class="link">
-		<slot />
+		<slot /><i class="bi bi-file-earmark-arrow-down" />
 	</span>
 {:else}
-	<button on:click={() => download(data, filename, bom)}>
-		<slot />
+	<button class="btn btn-sm btn-outline-dark" on:click={() => download(data, filename, bom)}>
+		<slot /><i class="bi bi-file-earmark-arrow-down ms-2" />
 	</button>
 {/if}
 
 <style>
 	.link {
-		color: blue;
-		text-decoration: underline;
 		cursor: pointer;
 	}
 </style>
