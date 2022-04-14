@@ -1,12 +1,19 @@
+<script context="module">
+	/** @type {import('@sveltejs/kit').Load} */
+	export const load = async ({ url }) => ({ props: { url } });
+</script>
+
 <script>
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Navbar from '$lib/Navbar/index.svelte';
+	import PageTransition from '$lib/PageTransition.svelte';
 	import { groupsDict, records } from '$lib/stores';
 	import { ATTRIBS } from '$lib/utils';
 	import { fetchTable } from '$lib/api';
-
 	import '../app.scss';
+
+	export let url;
 
 	let loading = true;
 	onMount(async () => {
@@ -47,5 +54,8 @@
 		<p>loading...</p>
 	</div>
 {:else}
+	<!-- <PageTransition {url}>
+		<slot />
+	</PageTransition> -->
 	<slot />
 {/if}

@@ -94,7 +94,12 @@
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 @import '../node_modules/bootstrap/scss/bootstrap';
 
-body, html{
+html{
+	height: 100%;
+	// overflow-y: auto;
+}
+
+body{
 	height: 100%;
 	overflow-y: auto;
 }
