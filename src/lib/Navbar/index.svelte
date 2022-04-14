@@ -21,10 +21,15 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mx-auto mb-2 mb-lg-0 border border-dark rounded-pill px-1 py-1 ">
-				<li class="nav-item px-3" class:customActive={$page.routeId.startsWith('explore')}>
+				<li
+					class="nav-item px-3"
+					class:customActive={$page.routeId.startsWith('explore') ||
+						$page.routeId.startsWith('resource')}
+				>
 					<a
 						class="nav-link"
-						class:active={$page.routeId.startsWith('explore')}
+						class:active={$page.routeId.startsWith('explore') ||
+							$page.routeId.startsWith('resource')}
 						href={`${base}/explore`}>Explore</a
 					>
 				</li>

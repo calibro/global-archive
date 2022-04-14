@@ -85,6 +85,12 @@
 
 				<div class="border-top border-dark py-3">
 					<h6 class="fw-light mb-1">Region concerned</h6>
+					<p class="BespokeSerif">
+						{$groupsDict['Region concerned']
+							.filter((d) => resource.fields['Region concerned'].includes(d.id))
+							.map((d) => d.fields['Name'])
+							.join(', ')}
+					</p>
 					<Responsive>
 						<ResourceMap
 							regions_concerned={resource.fields['Region concerned'].map((r) => {
