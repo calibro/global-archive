@@ -22,8 +22,7 @@
 		projection
 			.fitSize([width, height], { type: 'Sphere' })
 			.rotate([0, -90])
-			.translate([cWidth / 2, cHeight / 2])
-			.precision(0.1);
+			.translate([cWidth / 2, cHeight / 2]);
 
 		context.strokeStyle = 'rgba(256,256,256,0.3)';
 		context.beginPath(), path(geoGraticule10()), context.stroke();
