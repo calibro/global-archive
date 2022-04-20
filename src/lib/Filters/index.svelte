@@ -95,6 +95,7 @@
 				on:updateCf={(e) => filterYear(e)}
 			/>
 		{/if}
+
 		<div class="groupsContainer mt-3 d-none d-md-inline-flex">
 			{#each cfGroups as group}
 				<Group
@@ -122,7 +123,18 @@
 		width: 100%;
 		overflow-x: auto;
 		overflow-y: hidden;
+		position: relative;
 	}
+
+	/* .groupsContainer:after {
+		content: '';
+		height: 100%;
+		width: 15px;
+		top: 0;
+		position: absolute;
+		right: 0;
+		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	} */
 
 	.filtersContainer {
 		max-height: calc(100vh - 73px - 180px);
