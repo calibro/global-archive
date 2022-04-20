@@ -4,7 +4,7 @@
 	$: filters = [...Object.entries($active_filters)];
 </script>
 
-<div>
+<div class="mt-3 mt-md-0">
 	{#each filters as [key, values]}
 		{#if values && values.length > 0}
 			{#each values as value}

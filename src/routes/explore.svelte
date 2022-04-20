@@ -4,6 +4,7 @@
 	import { cfRecords, showFilters, view } from '$lib/stores';
 	import Filters from '$lib/Filters/index.svelte';
 	import ActiveFilters from '$lib/ActiveFilters.svelte';
+	import SwitchView from '$lib/SwitchView.svelte';
 	import GridView from '$lib/GridView.svelte';
 	import ListView from '$lib/ListView.svelte';
 	import Resource from '$lib/Resource.svelte';
@@ -63,7 +64,7 @@
 			duration,
 			css: (t) => {
 				return `
-					transform: translate(-${t * 70}%);`;
+					transform: translateX(-${t * 70}%);`;
 			}
 		};
 	}
@@ -73,7 +74,7 @@
 			duration,
 			css: (t) => {
 				return `
-					transform: translate(-${t * 70}%);opacity: ${t * 1};`;
+					transform: translateX(-${t * 70}%);opacity: ${t * 1};`;
 			}
 		};
 	}
@@ -89,10 +90,12 @@
 				<Filters />
 			{/if}
 			<div class="row align-items-center mt-3">
-				<div class="col-auto">
-					<p class="my-0 BespokeSerif me-2">Displaying: {total} / {$cfRecords.size()} archives</p>
+				<div class="col-12 col-md-auto">
+					<p class="my-2 my-md-0 BespokeSerif me-2">
+						Displaying: {total} / {$cfRecords.size()} archives
+					</p>
 				</div>
-				<div class="col-auto ms-auto d-flex align-items-center">
+				<div class="col-6 col-md-auto ms-auto d-flex align-items-md-center flex-column flex-md-row">
 					<label class="col-auto me-2 BespokeSerif" for="sort-select">Sort by:</label>
 					<div class="col-auto">
 						<select
@@ -107,6 +110,12 @@
 							{/each}
 						</select>
 					</div>
+				</div>
+				<div
+					class=" d-flex d-md-none col-6 col-md-auto ms-auto d-flex align-items-md-center align-items-end flex-column flex-md-row"
+				>
+					<label class="col-auto me-2 BespokeSerif" for="">View:</label>
+					<SwitchView />
 				</div>
 			</div>
 			<div class="row">

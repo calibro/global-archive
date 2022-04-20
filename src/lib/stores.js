@@ -8,6 +8,7 @@ export const groupsDict = writable({});
 export const active_filters = writable({});
 export const view = writable('grid');
 export const showFilters = writable(false);
+export const showPagesMobile = writable(false);
 export const bookmarks = localStorageStore('gao_bookmarks', []);
 
 export const cfRecords = derived(records, ($records, set) => {

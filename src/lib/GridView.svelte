@@ -4,7 +4,7 @@
 </script>
 
 {#each records as record (record.id)}
-	<div class="col-3 my-2">
+	<div class="col-12 col-md-3 my-2">
 		<RecordCard {record} />
 	</div>
 {/each}

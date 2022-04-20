@@ -96,12 +96,13 @@
 
 html{
 	height: 100%;
-	// overflow-y: auto;
+	overflow-y: auto;
 }
 
 body{
 	height: 100%;
 	overflow-y: auto;
+	position: relative;
 }
 
 body {

@@ -7,7 +7,7 @@
 
 <div class="w-100 h-100 d-flex flex-column">
 	<div
-		class="flex-grow-1 flex-shrink-1 d-flex flex-column align-items-center justify-content-center position-relative"
+		class="py-5 py-md-0 flex-grow-1 flex-shrink-1 d-flex flex-column align-items-center justify-content-center position-relative"
 	>
 		<div
 			class="position-absolute top-0 left-0 w-100 h-100 overflow-hidden bg-dark d-block"
@@ -30,9 +30,11 @@
 	<div class="flex-grow-0 flex-shrink-0 bg-dark text-white">
 		<div class="container">
 			<div class="row py-3">
-				<div class="col-3"><img class="img-fluid" alt="logo" src={logo} /></div>
-				<div class="col-9">
-					<p class="BespokeSerif my-0 desc">
+				<div class="col-8 offset-2 offset-md-0 col-md-3">
+					<img class="img-fluid" alt="logo" src={logo} />
+				</div>
+				<div class="col-12 col-md-9">
+					<p class="BespokeSerif my-3 my-md-0 desc">
 						A directory of open digital collections for the study of colonial and global history.
 						Global Archives Online is designed to identify and locate open resources for the study
 						of and research on colonial and global history. Aimed primarily at students and
@@ -49,12 +51,23 @@
 
 <style>
 	.title {
-		font-size: 10rem;
-		line-height: 86%;
+		font-size: 4.5rem;
+		line-height: 95%;
 		font-variation-settings: 'wght' 600;
 	}
 
 	.desc {
-		column-count: 2;
+		column-count: 1;
+	}
+
+	@media (min-width: 768px) {
+		.title {
+			font-size: 10rem;
+			line-height: 86%;
+		}
+
+		.desc {
+			column-count: 2;
+		}
 	}
 </style>
