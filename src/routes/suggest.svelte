@@ -12,21 +12,21 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-3">
+		<div class="col-12 col-md-3">
 			<h5>
 				This means that the material you suggest is of value of the study of interaction,
 				(dis-)connectivity, or mobility of people, ideas, or long-term processes with
 				larger-than-local consequences.
 			</h5>
 		</div>
-		<div class="col-3">
+		<div class="col-12 col-md-3">
 			<h5>
 				When suggesting digital collections from national archives or large organizations, make sure
 				to frame it around specific collection or corpus of material appropriate rather than its
 				host institution.
 			</h5>
 		</div>
-		<div class="col-3">
+		<div class="col-12 col-md-3">
 			<h5>
 				Make sure to fill in all obligatory fields accurate and up-to-date in the format required by
 				the online form. Metadata should be provided in English, however, the description of
@@ -34,14 +34,14 @@
 				possible or the specific archival corpus.
 			</h5>
 		</div>
-		<div class="col-3">
+		<div class="col-12 col-md-3">
 			<h5>
 				Note that resources must be open without embargo or limitation (collections that are partly
 				open or hosted by commercial actors may be included).
 			</h5>
 		</div>
 		<div class="col-12">
-			<h6 class="text-center my-3 fst-italic">
+			<h6 class="text-start text-md-center my-3 fst-italic">
 				After submitting the form, the Global Archives Online team will evaluate your suggestion
 				and, if relevant, add it to the portal within two weeks.
 			</h6>

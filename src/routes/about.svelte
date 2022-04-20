@@ -7,7 +7,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-6">
+		<div class="col-12 col-md-6 order-1 order-md-0">
 			<h5>
 				Global Archives Online is designed to identify and locate open resources for the study of
 				and research on colonial and global history. Aimed primarily at students and researchers
@@ -47,7 +47,7 @@
 				developments of open access digital research
 			</h5>
 		</div>
-		<div class="col-6">
+		<div class="col-12 col-md-6 order-0 order-md-1">
 			<h5>For information contact us at <b>globalarchives [at] lnu.se</b></h5>
 		</div>
 	</div>
