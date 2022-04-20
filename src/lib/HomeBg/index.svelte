@@ -13,15 +13,18 @@
 	$: cHeight = $height;
 
 	const projection = geoAzimuthalEquidistant();
+	const projectionInverted = geoAzimuthalEquidistant();
 
 	const path = geoPath().projection(projection);
+	const pathInverted = geoPath().projection(projectionInverted);
 
 	const topoData = feature(world, world.objects.land);
 
 	$: graticule = ({ context, width, height }) => {
-		projection
+		projection.fitSize([width, height], { type: 'Sphere' }).translate([cWidth / 2, cHeight / 2]);
+
+		projectionInverted
 			.fitSize([width, height], { type: 'Sphere' })
-			.rotate([0, -90])
 			.translate([cWidth / 2, cHeight / 2]);
 
 		context.strokeStyle = 'rgba(256,256,256,0.3)';
@@ -36,13 +39,19 @@
 
 	$: globeInverted = ({ context }) => {
 		context.fillStyle = 'gray';
-		projection.rotate([$t / 500 - 360, 90]);
-		context.beginPath(), path(topoData), context.fill();
+		projectionInverted.rotate([$t / 500 - 360, 90]);
+		context.beginPath(), pathInverted(topoData), context.fill();
 	};
 </script>
 
 <Canvas width={$width} height={$width * 2}>
 	<Layer render={globeInverted} />
 	<Layer render={globe} />
-	<Layer setup={({ context }) => path.context(context)} render={graticule} />
+	<Layer
+		setup={({ context }) => {
+			path.context(context);
+			pathInverted.context(context);
+		}}
+		render={graticule}
+	/>
 </Canvas>
