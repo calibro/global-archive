@@ -6,11 +6,11 @@
 	import countries from './countries.json';
 
 	export let regions_concerned = [];
-	const { width } = getContext('responsive');
-	const height = 500;
+	const { width, height } = getContext('responsive');
+	$: mHeight = $width < 500 ? $width : 500;
 
 	$: projection = geoPeirceQuincuncial()
-		.fitSize([$width, height], { type: 'Sphere' })
+		.fitSize([$width, mHeight], { type: 'Sphere' })
 		.precision(0.1);
 
 	$: path = geoPath().projection(projection);
@@ -24,7 +24,7 @@
 	const data = land.features;
 </script>
 
-<svg width={$width} {height}>
+<svg width={$width} height={mHeight}>
 	{#each data as feature}
 		<path
 			d={path(feature)}

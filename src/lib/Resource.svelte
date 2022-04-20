@@ -21,10 +21,16 @@
 		<p>loading...</p>
 	{:then resource}
 		<div class="row">
-			<div class="col-8" class:offset-2={!fromExplore}>
+			<div
+				class="col-md-8"
+				class:col-12={!fromExplore}
+				class:offset-0={!fromExplore}
+				class:offset-md-2={!fromExplore}
+				class:col-10={fromExplore}
+			>
 				<div class="d-flex my-3 align-items-baseline">
 					<h1 class="my-0 me-1">{resource.fields['Name of collection']}</h1>
-					<div class="ms-auto px-3 border border-dark rounded-pill">
+					<div class="ms-auto px-3 border border-dark rounded-pill d-none d-md-block">
 						<Bookmark record={resource} />
 					</div>
 				</div>
@@ -46,7 +52,7 @@
 							{#if hover}
 								<div
 									transition:fade
-									class="overlay position-absolute d-flex align-items-center justify-content-center"
+									class="overlay position-absolute align-items-center justify-content-center d-none d-md-flex"
 								>
 									<a
 										href={resource.fields['Link to collection']}
@@ -59,8 +65,18 @@
 						</div>
 					</ImgBg>
 				{/if}
-
-				<p class="BespokeSerif my-3 border-bottom border-dark py-3">
+				<div class="d-flex d-md-none mt-3">
+					<a
+						href={resource.fields['Link to collection']}
+						target="_blank"
+						class="btn btn-light rounded-pill border-dark"
+						role="button">Open website</a
+					>
+					<div class="ms-auto px-3 border border-dark rounded-pill d-flex align-items-center">
+						<Bookmark record={resource} />
+					</div>
+				</div>
+				<p class="BespokeSerif mt-md-3 mt-0 mb-3 border-bottom border-dark py-3">
 					{resource.fields['Brief description of collection']}
 				</p>
 				<div class="row">

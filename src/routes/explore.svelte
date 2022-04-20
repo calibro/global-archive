@@ -60,21 +60,35 @@
 	}
 
 	function slideResource(node, { duration }) {
+		const style = getComputedStyle(node);
+		const numberPattern = /-?\d+\.?\d*/g;
+
+		const values = style.transform.match(numberPattern);
+		const x = +values[values.length - 2] * -1;
+		const percentage = x >= 768 ? 70 : 90;
+
 		return {
 			duration,
 			css: (t) => {
 				return `
-					transform: translateX(-${t * 70}%);`;
+					transform: translateX(-${t * percentage}%);`;
 			}
 		};
 	}
 
 	function slideOvelay(node, { duration }) {
+		const style = getComputedStyle(node);
+		const numberPattern = /-?\d+\.?\d*/g;
+
+		const values = style.transform.match(numberPattern);
+		const x = +values[values.length - 2] * -1;
+		const percentage = x >= 768 ? 70 : 90;
+
 		return {
 			duration,
 			css: (t) => {
 				return `
-					transform: translateX(-${t * 70}%);opacity: ${t * 1};`;
+					transform: translateX(-${t * percentage}%);opacity: ${t * 1};`;
 			}
 		};
 	}
@@ -171,16 +185,31 @@
 
 	.wrapperChild.resourceActive,
 	.overlay {
-		transform: translateX(-70%);
+		transform: translateX(-90%);
 		overflow-y: hidden;
 	}
 
 	.wrapperResource {
 		overflow-y: auto;
-		transform: translateX(-70%);
+		transform: translateX(-90%);
 	}
 
 	.overlay {
-		transform: translateX(-70%);
+		transform: translateX(-90%);
+	}
+
+	@media (min-width: 768px) {
+		.wrapperChild.resourceActive,
+		.overlay {
+			transform: translateX(-70%);
+		}
+
+		.wrapperResource {
+			transform: translateX(-70%);
+		}
+
+		.overlay {
+			transform: translateX(-70%);
+		}
 	}
 </style>
