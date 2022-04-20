@@ -2,6 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import YearPicker from '$lib/YearPicker/index.svelte';
 	import Group from './group.svelte';
+	import GroupMobile from './groupMobile.svelte';
 	import { cfRecords, active_filters } from '$lib/stores';
 
 	$: cfGroups = [...Array.from($cfRecords.groups)];
@@ -84,8 +85,8 @@
 	}
 </script>
 
-<div class="border border-dark rounded my-2 " transition:slide>
-	<div class="px-4 pt-4">
+<div class="filtersContainer border border-dark rounded my-2" transition:slide>
+	<div class="px-3 px-md-4 pt-4">
 		{#if startYear && endYear}
 			<YearPicker
 				{startYear}
@@ -94,9 +95,18 @@
 				on:updateCf={(e) => filterYear(e)}
 			/>
 		{/if}
-		<div class="groupsContainer mt-3 d-inline-flex">
+		<div class="groupsContainer mt-3 d-none d-md-inline-flex">
 			{#each cfGroups as group}
 				<Group
+					{group}
+					on:filterCf={(e) => filterDimension(e.detail.key, e.detail.dim, e.detail.value)}
+					on:resetCf={(e) => resetFilterDimension(e.detail.key, e.detail.dim)}
+				/>
+			{/each}
+		</div>
+		<div class="groupsContainerMobile my-3 d-block d-md-none">
+			{#each cfGroups as group}
+				<GroupMobile
 					{group}
 					on:filterCf={(e) => filterDimension(e.detail.key, e.detail.dim, e.detail.value)}
 					on:resetCf={(e) => resetFilterDimension(e.detail.key, e.detail.dim)}
@@ -112,5 +122,18 @@
 		width: 100%;
 		overflow-x: auto;
 		overflow-y: hidden;
+	}
+
+	.filtersContainer {
+		max-height: calc(100vh - 73px - 180px);
+		width: 100%;
+		overflow-y: auto;
+	}
+
+	@media (min-width: 768px) {
+		.filtersContainer {
+			max-height: unset;
+			overflow-y: hidden;
+		}
 	}
 </style>

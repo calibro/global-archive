@@ -97,8 +97,18 @@
 </MediaQuery>
 
 <style>
+	.navbar-brand {
+		font-size: 1rem;
+	}
+
 	.customActive {
 		background-color: var(--bs-primary);
 		border-radius: 50rem !important;
+	}
+
+	@media (min-width: 768px) {
+		.navbar-brand {
+			font-size: 1.25rem;
+		}
 	}
 </style>
