@@ -15,7 +15,7 @@
 
 	$: path = geoPath().projection(projection);
 
-	const topoData = feature(countries, 'countries');
+	const topoData = feature(countries, 'collection');
 	const land = {
 		...topoData,
 		features: topoData.features.filter((d) => d.properties.ISO_A3 !== 'ATA')
