@@ -69,7 +69,7 @@
 			rx={rectHeight / 2}
 			height={rectHeight}
 			width={x(new Date(endYear, 11, 31)) - x(new Date(startYear, 0, 1))}
-			fill={uncertain ? 'url(#bones-gradient)' : 'black'}
+			fill={uncertain ? 'url(#gradient)' : 'black'}
 		/>
 		<g transform="translate(0,{rectHeight / 2})" bind:this={gAxis} />
 	</g>

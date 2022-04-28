@@ -119,7 +119,10 @@
 				</div>
 				<div class="border-top border-dark py-3">
 					<h6 class="fw-light mb-3">
-						Period: <span class="BespokeSerif fw-bold"
+						Period {#if resource.fields['uncertain']}
+							<span>[uncertain]</span>
+						{/if}:
+						<span class="BespokeSerif fw-bold"
 							>{resource.fields['Start year']} - {resource.fields['End year']}</span
 						>
 					</h6>
@@ -127,7 +130,7 @@
 						<ResourceTimeline
 							startYear={resource.fields['Start year']}
 							endYear={resource.fields['End year']}
-							uncertain={resource.fields['Uncertain']}
+							uncertain={resource.fields['uncertain']}
 						/>
 					</Responsive>
 				</div>
