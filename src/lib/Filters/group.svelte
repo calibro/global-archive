@@ -12,14 +12,12 @@
 		.range([4, 60])
 		.clamp(true);
 
-	const facetsOrder = Object.assign(
-		{},
-		...group[1].top(Infinity).map((d, i) => {
-			return { [d.key]: i };
-		})
+	$: facets = [...group[1].all()].sort((a, b) =>
+		ascending(
+			$groupsDict[group[0]].find((d) => d.id === a.key).fields.Name,
+			$groupsDict[group[0]].find((d) => d.id === b.key).fields.Name
+		)
 	);
-
-	$: facets = [...group[1].all()].sort((a, b) => ascending(facetsOrder[a.key], facetsOrder[b.key]));
 
 	function filterCf(key, dim, value) {
 		dispatch('filterCf', {
