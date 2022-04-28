@@ -95,16 +95,18 @@
 				on:updateCf={(e) => filterYear(e)}
 			/>
 		{/if}
-
-		<div class="groupsContainer mt-3 d-none d-md-inline-flex">
-			{#each cfGroups as group}
-				<Group
-					{group}
-					on:filterCf={(e) => filterDimension(e.detail.key, e.detail.dim, e.detail.value)}
-					on:resetCf={(e) => resetFilterDimension(e.detail.key, e.detail.dim)}
-				/>
-			{/each}
+		<div class="overflow-hidden position-relative d-none d-md-flex">
+			<div class="groupsContainer mt-3 d-flex flex-nowrap">
+				{#each cfGroups as group}
+					<Group
+						{group}
+						on:filterCf={(e) => filterDimension(e.detail.key, e.detail.dim, e.detail.value)}
+						on:resetCf={(e) => resetFilterDimension(e.detail.key, e.detail.dim)}
+					/>
+				{/each}
+			</div>
 		</div>
+
 		<div class="groupsContainerMobile my-3 d-block d-md-none">
 			{#each cfGroups as group}
 				<GroupMobile
@@ -123,18 +125,19 @@
 		width: 100%;
 		overflow-x: auto;
 		overflow-y: hidden;
-		position: relative;
+		/* position: relative; */
 	}
 
-	/* .groupsContainer:after {
+	.groupsContainer:after {
 		content: '';
 		height: 100%;
 		width: 15px;
 		top: 0;
 		position: absolute;
 		right: 0;
-		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-	} */
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+		z-index: 3;
+	}
 
 	.filtersContainer {
 		max-height: calc(100vh - 73px - 180px);
