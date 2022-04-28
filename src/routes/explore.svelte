@@ -106,7 +106,7 @@
 			<div class="row align-items-center mt-3">
 				<div class="col-12 col-md-auto">
 					<p class="my-2 my-md-0 BespokeSerif me-2">
-						Displaying: {total} / {$cfRecords.size()} archives
+						Displaying: {total} / {$cfRecords.size()} collections
 					</p>
 				</div>
 				<div class="col-6 col-md-auto ms-auto d-flex align-items-md-center flex-column flex-md-row">
