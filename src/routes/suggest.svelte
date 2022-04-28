@@ -7,7 +7,12 @@
 				history are welcome.
 			</h1>
 			<div class="text-center my-4">
-				<a role="button" class="btn btn-primary btn-lg rounded-pill" href="#">Submit</a>
+				<a
+					role="button"
+					class="btn btn-primary btn-lg rounded-pill"
+					href="https://airtable.com/shrRZgIRwMsd7SKwq"
+					target="_blank">Submit</a
+				>
 			</div>
 		</div>
 	</div>
