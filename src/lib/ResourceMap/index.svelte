@@ -3,7 +3,9 @@
 	import { feature } from 'topojson-client';
 	import { geoPath } from 'd3-geo';
 	import { geoPeirceQuincuncial } from 'd3-geo-projection';
+	import { csvParse } from 'd3-dsv';
 	import countries from './countries.json';
+	import oceans from './oceans.csv?raw';
 
 	export let regions_concerned = [];
 	const { width, height } = getContext('responsive');
@@ -22,6 +24,9 @@
 	};
 
 	const data = land.features;
+
+	const oceansData = csvParse(oceans);
+	console.log(oceansData, regions_concerned);
 </script>
 
 <svg width={$width} height={mHeight}>
@@ -32,4 +37,25 @@
 			fill={regions_concerned.includes(feature.properties.regions_concerned) ? '#FFE000' : 'black'}
 		/>
 	{/each}
+	{#each oceansData as ocean}
+		{#if regions_concerned.includes(ocean.name)}
+			<text
+				class="label"
+				text-anchor="middle"
+				transform="translate({projection([+ocean.longitude, +ocean.latitude]) + ''})"
+				dy="0.35em">{ocean.name}</text
+			>
+		{/if}
+	{/each}
 </svg>
+
+<style>
+	.label {
+		font-size: 0.6rem;
+		paint-order: stroke;
+		stroke-linejoin: round;
+		paint-order: stroke;
+		stroke: white;
+		stroke-width: 2px;
+	}
+</style>
