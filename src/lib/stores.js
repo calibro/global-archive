@@ -38,5 +38,11 @@ export const cfRecords = derived(records, ($records, set) => {
 			cs.groups.set(a.key, dim.group());
 		}
 	}
+
+	const searchDim = cs.dimension(function (d) {
+		return d['Name of collection'] + ' ' + d['Brief description of collection'];
+	});
+	// @ts-ignore
+	cs.dims.set('search', searchDim);
 	return set(cs);
 });

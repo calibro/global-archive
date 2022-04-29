@@ -3,6 +3,7 @@
 	import YearPicker from '$lib/YearPicker/index.svelte';
 	import Group from './group.svelte';
 	import GroupMobile from './groupMobile.svelte';
+	import Search from '$lib/Search.svelte';
 	import { cfRecords, active_filters } from '$lib/stores';
 
 	$: cfGroups = [...Array.from($cfRecords.groups)];
@@ -62,6 +63,20 @@
 		update();
 	}
 
+	function filterSearch(e) {
+		active_filters.update((d) => {
+			d['search'] = e.value;
+			return d;
+		});
+		const regex = new RegExp(e.value, 'gi');
+
+		$cfRecords.dims.get('search').filterFunction((d) => {
+			return regex.test(d);
+		});
+
+		update();
+	}
+
 	function resetFilterYears() {
 		$cfRecords.dims.get('Start year').filterAll();
 		$cfRecords.dims.get('End year').filterAll();
@@ -87,14 +102,20 @@
 
 <div class="filtersContainer border border-dark rounded my-2" transition:slide>
 	<div class="px-3 px-md-4 pt-4">
-		{#if startYear && endYear}
-			<YearPicker
-				{startYear}
-				{endYear}
-				on:resetCf={() => resetFilterYears()}
-				on:updateCf={(e) => filterYear(e)}
-			/>
-		{/if}
+		<div class="d-flex align-items-start align-items-md-center flex-column flex-md-row">
+			{#if startYear && endYear}
+				<YearPicker
+					{startYear}
+					{endYear}
+					on:resetCf={() => resetFilterYears()}
+					on:updateCf={(e) => filterYear(e)}
+				/>
+			{/if}
+			<div class="ms-auto col-12 col-md-4 mt-3 mt-md-0">
+				<Search on:filterCf={(e) => filterSearch(e.detail)} />
+			</div>
+		</div>
+
 		<div class="overflow-hidden position-relative d-none d-md-flex">
 			<div class="groupsContainer mt-3 d-flex flex-nowrap">
 				{#each cfGroups as group}

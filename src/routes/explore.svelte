@@ -1,5 +1,4 @@
 <script>
-	import { goto } from '$app/navigation';
 	import { ascending, descending } from 'd3-array';
 	import { cfRecords, showFilters, view } from '$lib/stores';
 	import Filters from '$lib/Filters/index.svelte';
@@ -8,7 +7,8 @@
 	import GridView from '$lib/GridView.svelte';
 	import ListView from '$lib/ListView.svelte';
 	import Resource from '$lib/Resource.svelte';
-	import { beforeNavigate, afterNavigate } from '$app/navigation';
+	import Search from '$lib/Search.svelte';
+	import { beforeNavigate } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
 
@@ -103,6 +103,7 @@
 			{#if $showFilters}
 				<Filters />
 			{/if}
+
 			<div class="row align-items-center mt-3">
 				<div class="col-12 col-md-auto">
 					<p class="my-2 my-md-0 BespokeSerif me-2">
