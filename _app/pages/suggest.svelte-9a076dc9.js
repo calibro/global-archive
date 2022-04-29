@@ -1,4 +1,4 @@
-import{S as lt,i as rt,s as nt,e as o,t as d,k as I,c as a,a as s,h as u,d as e,m as D,b as i,g as ct,G as t,I as B}from"../chunks/vendor-2cff0f1a.js";function ht(it){let r,f,h,m,S,G,v,c,M,O,l,g,V,z,N,p,A,R,T,b,k,W,C,y,x,K,Z,_,w,j;return{c(){r=o("div"),f=o("div"),h=o("div"),m=o("h1"),S=d(`Global Archives Online will benefit from your suggestions for open access digital
+import{S as lt,i as rt,s as nt,e as o,t as d,k as I,c as a,a as s,h as u,d as e,m as D,b as i,g as ct,G as t,I as B}from"../chunks/vendor-0ed7318b.js";function ht(it){let r,f,h,m,S,G,v,c,M,O,l,g,V,z,N,p,A,R,T,b,k,W,C,y,x,K,Z,_,w,j;return{c(){r=o("div"),f=o("div"),h=o("div"),m=o("h1"),S=d(`Global Archives Online will benefit from your suggestions for open access digital
 				collections. Any suggestions relevant for the fields of global, colonial, or imperial
 				history are welcome.`),G=I(),v=o("div"),c=o("a"),M=d("Submit"),O=I(),l=o("div"),g=o("div"),V=o("h5"),z=d(`This means that the material you suggest is of value of the study of interaction,
 				(dis-)connectivity, or mobility of people, ideas, or long-term processes with
