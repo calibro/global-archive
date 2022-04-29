@@ -11,6 +11,7 @@
 	const { width, height } = getContext('responsive');
 	$: mHeight = $width < 500 ? $width : 500;
 
+	// @ts-ignore
 	$: projection = geoWinkel3().fitSize([$width, mHeight], { type: 'Sphere' }); //.precision(0.1);
 
 	$: path = geoPath().projection(projection);
