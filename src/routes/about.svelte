@@ -14,7 +14,9 @@
 	<div class="row">
 		<div class="col-12">
 			{#await fetchTable('About')}
-				<p>loading...</p>
+				<div class="spinner-border spinner-border-sm text-primary" role="status">
+					<span class="visually-hidden">Loading...</span>
+				</div>
 			{:then paragraphs}
 				<div class="fs-5 pContainer">
 					{#each paragraphs as paragraph}

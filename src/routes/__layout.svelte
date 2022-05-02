@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Navbar from '$lib/Navbar/index.svelte';
+	import Loader from '$lib/Loader.svelte';
 	import { groupsDict, records } from '$lib/stores';
 	import { ATTRIBS } from '$lib/utils';
 	import { fetchTable } from '$lib/api';
@@ -42,9 +43,7 @@
 {/if}
 
 {#if loading}
-	<div class="container">
-		<p>loading...</p>
-	</div>
+	<Loader />
 {:else}
 	<slot />
 {/if}

@@ -17,8 +17,11 @@
 
 <div class="container">
 	{#await fetchResource(id)}
-		<!-- promise is pending -->
-		<p>loading...</p>
+		<div class="my-5">
+			<div class="spinner-border spinner-border-sm text-primary" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div>
 	{:then resource}
 		<div class="row">
 			<div

@@ -1,4 +1,3 @@
-// import { base } from '$lib/utils';
 const BASE_URL = 'https://api.airtable.com/v0';
 const BASE_ID = 'appH8M1k9MeD4OVtz';
 
