@@ -21,17 +21,21 @@
 			</thead>
 			<tbody>
 				{#each records as record (record.id)}
-					<tr class="line cursor-pointer" on:click={() => goto(`${base}/resource/${record.id}`)}>
+					<tr class="line cursor-pointer">
 						{#each HEADERS as header}
 							{#if header.multiple}
-								<td class="fst-italic border-dark"
+								<td
+									class="fst-italic border-dark"
+									on:click={() => goto(`${base}/resource/${record.id}`)}
 									>{$groupsDict[header.label]
 										.filter((d) => record[header.label].includes(d.id))
 										.map((d) => d.fields['Name'])
 										.join(', ')}</td
 								>
 							{:else}
-								<td class="border-dark">{record[header.label]}</td>
+								<td class="border-dark" on:click={() => goto(`${base}/resource/${record.id}`)}
+									>{record[header.label]}</td
+								>
 							{/if}
 						{/each}
 						<td class="border-dark"><Bookmark {record} /></td>
