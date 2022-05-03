@@ -191,6 +191,7 @@
 	}
 
 	.wrapperResource {
+		width: 100%;
 		overflow-y: auto;
 		transform: translateX(-90%);
 	}
