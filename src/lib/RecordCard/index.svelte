@@ -23,9 +23,15 @@
 		<span class="new badge bg-light">New</span>
 	{/if}
 	{#if resourceImage}
-		<ImgBg url={resourceImage}>
-			<img class="img-fluid shadow thumb" src={resourceImage} alt={record['Name of collection']} />
-		</ImgBg>
+		<a href={`${base}/resource/${record.id}`}>
+			<ImgBg url={resourceImage}>
+				<img
+					class="img-fluid shadow thumb "
+					src={resourceImage}
+					alt={record['Name of collection']}
+				/>
+			</ImgBg>
+		</a>
 	{/if}
 	<div class="d-flex my-2 w-100">
 		<div class="me-1">
@@ -55,6 +61,12 @@
 	.thumb {
 		height: 160px;
 		width: auto;
+		transform: scale(1);
+		transition: transform 0.2s ease-in-out;
+	}
+
+	.thumb:hover {
+		transform: scale(1.03);
 	}
 
 	.new {
