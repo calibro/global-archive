@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-5c942ea7.js",
+    "file": "start-0fa676a6.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -21,7 +21,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-ac25f34b.js",
+    "file": "pages/__layout.svelte-1e77341a.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -34,7 +34,7 @@
       "_api-67b41fb1.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-53e02ecc.css"
+      "assets/pages/__layout.svelte-353709ed.css"
     ],
     "assets": [
       "assets/logo_symbol-2aab03ea.svg",
@@ -99,13 +99,13 @@
     ]
   },
   "src/routes/resource/[id].svelte": {
-    "file": "pages/resource/_id_.svelte-bf635db2.js",
+    "file": "pages/resource/_id_.svelte-98ef6407.js",
     "src": "src/routes/resource/[id].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-3cd2b798.js",
-      "_Resource-32c87e8d.js",
+      "_Resource-f152ac2d.js",
       "_stores-194d6628.js",
       "_Bookmark-a636b1ca.js",
       "_singletons-d1fb5791.js",
@@ -115,7 +115,7 @@
     ]
   },
   "src/routes/explore.svelte": {
-    "file": "pages/explore.svelte-00afc057.js",
+    "file": "pages/explore.svelte-bfcab82b.js",
     "src": "src/routes/explore.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -124,7 +124,7 @@
       "_stores-82a3d97c.js",
       "_SwitchView-60886d43.js",
       "_Bookmark-a636b1ca.js",
-      "_Resource-32c87e8d.js",
+      "_Resource-f152ac2d.js",
       "_paths-396f020f.js",
       "_ListView-edb5b8d1.js",
       "_stores-194d6628.js",
@@ -133,7 +133,7 @@
       "_Responsive-1a565f31.js"
     ],
     "css": [
-      "assets/pages/explore.svelte-4e39777a.css"
+      "assets/pages/explore.svelte-20621f5e.css"
     ]
   },
   "src/routes/suggest.svelte": {
@@ -229,8 +229,8 @@
       "_stores-82a3d97c.js"
     ]
   },
-  "_Resource-32c87e8d.js": {
-    "file": "chunks/Resource-32c87e8d.js",
+  "_Resource-f152ac2d.js": {
+    "file": "chunks/Resource-f152ac2d.js",
     "imports": [
       "_vendor-3cd2b798.js",
       "_Bookmark-a636b1ca.js",
