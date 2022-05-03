@@ -25,10 +25,12 @@
 	{:then resource}
 		<div class="row">
 			<div
-				class="col-md-8"
+				class:col-md-10={fromExplore}
 				class:col-12={!fromExplore}
 				class:offset-0={!fromExplore}
+				class:offset-md-1={fromExplore}
 				class:offset-md-2={!fromExplore}
+				class:col-md-8={!fromExplore}
 				class:col-10={fromExplore}
 			>
 				<div class="d-flex my-3 align-items-baseline">

@@ -82,13 +82,13 @@
 
 		const values = style.transform.match(numberPattern);
 		const x = +values[values.length - 2] * -1;
-		const percentage = x >= 768 ? 70 : 90;
+		const percentage = x >= 768 ? 1024 : 90;
 
 		return {
 			duration,
 			css: (t) => {
 				return `
-					transform: translateX(-${t * percentage}%);opacity: ${t * 1};`;
+					transform: translateX(-${t * percentage}${percentage === 90 ? '%' : 'px'});opacity: ${t * 1};`;
 			}
 		};
 	}
@@ -164,7 +164,7 @@
 	{/if}
 	{#if interceptedId}
 		<div
-			class="wrapperResource flex-shrink-0 flex-grow-0 w-100 border-start border-dark"
+			class="wrapperResource flex-shrink-0 flex-grow-0 border-start border-dark"
 			transition:slideResource={{ duration: 300 }}
 		>
 			<Resource id={interceptedId} fromExplore={true} />
@@ -202,15 +202,17 @@
 	@media (min-width: 768px) {
 		.wrapperChild.resourceActive,
 		.overlay {
-			transform: translateX(-70%);
+			/* transform: translateX(-70%); */
+			transform: translateX(-1024px);
 		}
 
 		.wrapperResource {
-			transform: translateX(-70%);
+			width: 1024px;
+			transform: translateX(-1024px);
 		}
 
 		.overlay {
-			transform: translateX(-70%);
+			transform: translateX(-1024px);
 		}
 	}
 </style>
