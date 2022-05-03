@@ -32,7 +32,7 @@
 				class:col-10={fromExplore}
 			>
 				<div class="d-flex my-3 align-items-baseline">
-					<h1 class="my-0 me-1">{resource.fields['Name of collection']}</h1>
+					<h1 class="mt-4 mb-2 me-1">{resource.fields['Name of collection']}</h1>
 					<div class="ms-auto px-3 border border-dark rounded-pill d-none d-md-block">
 						<Bookmark record={resource} />
 					</div>
@@ -120,7 +120,7 @@
 						/>
 					</Responsive>
 				</div>
-				<div class="border-top border-dark py-3">
+				<div class="border-top border-dark pt-3 pb-4">
 					<h6 class="fw-light mb-3">
 						Period {#if resource.fields['uncertain']}
 							<span>[uncertain]</span>
