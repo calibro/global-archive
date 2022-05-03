@@ -7,10 +7,10 @@
 	import GridView from '$lib/GridView.svelte';
 	import ListView from '$lib/ListView.svelte';
 	import Resource from '$lib/Resource.svelte';
-	import Search from '$lib/Search.svelte';
 	import { beforeNavigate } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	const sort_options = [
 		{ value: 'Created', label: 'Most recent' },
@@ -49,14 +49,14 @@
 			cancel();
 			const id = split[split.length - 1];
 			interceptedId = id;
-			history.pushState({}, '', `${$page.url.origin}/resource/${id}`);
+			history.pushState({}, '', `${$page.url.origin}${base}/resource/${id}`);
 		}
 	});
 
 	function closeResource() {
 		interceptedId = null;
 		$page.url.origin;
-		history.pushState({}, '', `${$page.url.origin}/explore`);
+		history.pushState({}, '', `${$page.url.origin}${base}/explore`);
 	}
 
 	function slideResource(node, { duration }) {
