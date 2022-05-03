@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-0fa676a6.js",
+    "file": "start-ea49d16a.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -82,7 +82,7 @@
     ]
   },
   "src/routes/bookmarks.svelte": {
-    "file": "pages/bookmarks.svelte-13cfc668.js",
+    "file": "pages/bookmarks.svelte-af98ecc6.js",
     "src": "src/routes/bookmarks.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -90,7 +90,7 @@
       "_vendor-3cd2b798.js",
       "_paths-396f020f.js",
       "_stores-82a3d97c.js",
-      "_ListView-edb5b8d1.js",
+      "_ListView-6cbff449.js",
       "_Bookmark-a636b1ca.js",
       "_singletons-d1fb5791.js"
     ],
@@ -99,13 +99,13 @@
     ]
   },
   "src/routes/resource/[id].svelte": {
-    "file": "pages/resource/_id_.svelte-98ef6407.js",
+    "file": "pages/resource/_id_.svelte-fa530e3a.js",
     "src": "src/routes/resource/[id].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-3cd2b798.js",
-      "_Resource-f152ac2d.js",
+      "_Resource-b6e1f56e.js",
       "_stores-194d6628.js",
       "_Bookmark-a636b1ca.js",
       "_singletons-d1fb5791.js",
@@ -115,7 +115,7 @@
     ]
   },
   "src/routes/explore.svelte": {
-    "file": "pages/explore.svelte-bfcab82b.js",
+    "file": "pages/explore.svelte-07290b2d.js",
     "src": "src/routes/explore.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -124,9 +124,9 @@
       "_stores-82a3d97c.js",
       "_SwitchView-60886d43.js",
       "_Bookmark-a636b1ca.js",
-      "_Resource-f152ac2d.js",
+      "_Resource-b6e1f56e.js",
       "_paths-396f020f.js",
-      "_ListView-edb5b8d1.js",
+      "_ListView-6cbff449.js",
       "_stores-194d6628.js",
       "_singletons-d1fb5791.js",
       "_api-67b41fb1.js",
@@ -209,8 +209,8 @@
       "_vendor-3cd2b798.js"
     ]
   },
-  "_ListView-edb5b8d1.js": {
-    "file": "chunks/ListView-edb5b8d1.js",
+  "_ListView-6cbff449.js": {
+    "file": "chunks/ListView-6cbff449.js",
     "imports": [
       "_vendor-3cd2b798.js",
       "_paths-396f020f.js",
@@ -229,8 +229,8 @@
       "_stores-82a3d97c.js"
     ]
   },
-  "_Resource-f152ac2d.js": {
-    "file": "chunks/Resource-f152ac2d.js",
+  "_Resource-b6e1f56e.js": {
+    "file": "chunks/Resource-b6e1f56e.js",
     "imports": [
       "_vendor-3cd2b798.js",
       "_Bookmark-a636b1ca.js",
