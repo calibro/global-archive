@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="bg w-100 p-3 d-flex aligh-items-center justify-content-center"
+	class="bg w-100 p-3 d-flex aligh-items-center justify-content-center rounded"
 	style={`background-color:${bgHex}`}
 >
 	<slot />
