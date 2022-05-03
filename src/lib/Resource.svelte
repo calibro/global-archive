@@ -85,7 +85,7 @@
 				<div class="row">
 					{#each METADATA as meta}
 						<div class="col-6">
-							<h6 class="fw-light mb-1">
+							<h6 class="mb-1">
 								{meta}
 							</h6>
 							{#if resource.fields[meta]}
