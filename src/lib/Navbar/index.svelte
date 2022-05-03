@@ -65,7 +65,7 @@
 					>
 				</li>
 			</ul>
-			<div class="d-none d-md-block">
+			<div class="d-none d-md-block switchContainer">
 				<SwitchView />
 			</div>
 		</div>
@@ -104,6 +104,11 @@
 	.customActive {
 		background-color: var(--bs-primary);
 		border-radius: 50rem !important;
+	}
+
+	.switchContainer {
+		/* sooo dirty */
+		margin-left: 105px;
 	}
 
 	@media (min-width: 768px) {
