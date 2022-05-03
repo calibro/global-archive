@@ -38,7 +38,13 @@
 
 <style>
 	.pContainer {
-		column-count: 2;
-		column-gap: 2rem;
+		column-count: 1;
+	}
+
+	@media (min-width: 768px) {
+		.pContainer {
+			column-count: 2;
+			column-gap: 2rem;
+		}
 	}
 </style>
