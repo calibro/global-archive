@@ -41,7 +41,7 @@
 				>
 			</h5>
 			{#if host_institution}
-				<h6 class="fst-italic host">{host_institution.fields['Name']}</h6>
+				<h6 class="host">{host_institution.fields['Name']}</h6>
 			{/if}
 		</div>
 		<div class="ms-auto">
