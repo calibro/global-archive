@@ -34,10 +34,13 @@
 		{#each data as feature}
 			<path
 				d={path(feature)}
-				class="borderc"
 				fill={regions_concerned.includes(feature.properties.regions_concerned)
 					? '#FFE000'
 					: 'black'}
+				stroke={regions_concerned.includes(feature.properties.regions_concerned)
+					? '#FFE000'
+					: 'black'}
+				stroke-width="0.5"
 			/>
 		{/each}
 		{#each oceansData as ocean}
