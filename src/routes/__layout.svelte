@@ -31,7 +31,6 @@
 		});
 
 		if (resRecords) {
-			console.log(resRecords[0]);
 			records.set(resRecords);
 		}
 		loading = false;

@@ -26,7 +26,6 @@
 				delete elm[p];
 			}
 			if ($groupsDict[p] && elm[p]) {
-				console.log(elm[p]);
 				elm[p] = $groupsDict[p]
 					.filter((g) => elm[p].includes(g.id))
 					.map((g) => g.fields['Name'])
@@ -35,8 +34,6 @@
 		}
 		return elm;
 	});
-
-	$: console.log($groupsDict);
 </script>
 
 <div class="container">
