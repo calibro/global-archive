@@ -85,8 +85,8 @@
 					{resource.fields['Brief description of collection']}
 				</p>
 				<div class="row">
-					{#each METADATA as meta}
-						<div class="col-6">
+					<div class="col-12 metaContainer">
+						{#each METADATA as meta}
 							<h6 class="mb-1">
 								{meta}
 							</h6>
@@ -100,8 +100,8 @@
 							{:else}
 								<p>---</p>
 							{/if}
-						</div>
-					{/each}
+						{/each}
+					</div>
 				</div>
 
 				<div class="border-top border-dark py-3">
@@ -154,5 +154,16 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
+	}
+
+	.metaContainer {
+		column-count: 1;
+	}
+
+	@media (min-width: 768px) {
+		.metaContainer {
+			column-count: 2;
+			column-gap: 2rem;
+		}
 	}
 </style>

@@ -6,8 +6,8 @@ export const ATTRIBS = [
 	{ key: 'Region concerned', multiple: true, group: true, table_name: 'Region concerned' },
 	{ key: 'State/Nation', multiple: true, group: true, table_name: 'State/Nation' },
 	{ key: 'Organisation', multiple: true, group: true, table_name: 'Organisation' },
-	{ key: 'Host institution', multiple: true, group: true, table_name: 'Host institution' },
 	{ key: 'Keywords', multiple: true, group: true, table_name: 'Keywords' },
+	{ key: 'Host institution', multiple: true, group: true, table_name: 'Host institution' },
 	{ key: 'Type of sources', multiple: true, group: true, table_name: 'Type of sources' },
 	{ key: 'Main language of collection', multiple: true, group: true, table_name: 'Language' },
 	{ key: 'Brief description of collection', multiple: false, group: false }
@@ -16,8 +16,8 @@ export const ATTRIBS = [
 export const METADATA = [
 	'State/Nation',
 	'Organisation',
-	'Host institution',
 	'Keywords',
+	'Host institution',
 	'Type of sources',
 	'Main language of collection'
 ];
