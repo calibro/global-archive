@@ -38,10 +38,10 @@
 						A directory of open digital collections for the study of colonial and global history.
 						Global Archives Online is designed to identify and locate open resources for the study
 						of and research on colonial and global history. Aimed primarily at students and
-						researchers interested in imperial, colonial and global history, the directory provides
-						users anywhere in the world with an overview of major digital collections of a variety
-						of primary sources, including digitized manuscripts, newspapers, books, pamphlets, maps,
-						images and audio-visual material.
+						researchers interested in imperial, colonial, and global history, the directory gives
+						users around the world an overview of major digital collections containing a variety of
+						primary sources, including digitised manuscripts, newspapers, books, pamphlets, maps,
+						images, and audio-visual material.
 					</p>
 				</div>
 			</div>

@@ -20,7 +20,7 @@
 
 <div class="h-100 position-relative">
 	{#if newRecord}
-		<span class="new badge bg-light">New</span>
+		<span class="new badge bg-primary text-body">New</span>
 	{/if}
 	{#if resourceImage}
 		<a href={`${base}/resource/${record.id}`}>
@@ -73,5 +73,6 @@
 		position: absolute;
 		top: 5px;
 		right: 5px;
+		z-index: 10;
 	}
 </style>

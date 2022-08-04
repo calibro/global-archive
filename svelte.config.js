@@ -8,6 +8,9 @@ const config = {
 	preprocess: [preprocess()],
 	kit: {
 		adapter: adapter({ fallback: '404.html' }),
+		// prerender: {
+		// 	default: false
+		// }
 		paths: {
 			base: dev ? '' : '/global-archive'
 		}

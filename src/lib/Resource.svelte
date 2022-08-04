@@ -50,7 +50,7 @@
 							on:blur={() => null}
 						>
 							<img
-								class="img-fluid shadow"
+								class="img shadow"
 								src={resource.fields.Image[0].thumbnails.large.url}
 								alt={resource.fields['Name of collection']}
 							/>
@@ -158,6 +158,12 @@
 
 	.metaContainer {
 		column-count: 1;
+	}
+
+	.img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	@media (min-width: 768px) {
