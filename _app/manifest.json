@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-fa56adfb.js",
+    "file": "start-e4e93bc3.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -99,13 +99,13 @@
     ]
   },
   "src/routes/resource/[id].svelte": {
-    "file": "pages/resource/_id_.svelte-3bc7dc47.js",
+    "file": "pages/resource/_id_.svelte-7fc0abb9.js",
     "src": "src/routes/resource/[id].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-3cd2b798.js",
-      "_Resource-f2efdbdb.js",
+      "_Resource-707e96ae.js",
       "_stores-194d6628.js",
       "_Bookmark-0ee1aa9b.js",
       "_singletons-d1fb5791.js",
@@ -115,7 +115,7 @@
     ]
   },
   "src/routes/explore.svelte": {
-    "file": "pages/explore.svelte-aeee8d3a.js",
+    "file": "pages/explore.svelte-4670d71d.js",
     "src": "src/routes/explore.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -124,7 +124,7 @@
       "_stores-29d0fb79.js",
       "_SwitchView-693f6aac.js",
       "_Bookmark-0ee1aa9b.js",
-      "_Resource-f2efdbdb.js",
+      "_Resource-707e96ae.js",
       "_paths-396f020f.js",
       "_ListView-52fa9e2b.js",
       "_stores-194d6628.js",
@@ -229,8 +229,8 @@
       "_stores-29d0fb79.js"
     ]
   },
-  "_Resource-f2efdbdb.js": {
-    "file": "chunks/Resource-f2efdbdb.js",
+  "_Resource-707e96ae.js": {
+    "file": "chunks/Resource-707e96ae.js",
     "imports": [
       "_vendor-3cd2b798.js",
       "_Bookmark-0ee1aa9b.js",
