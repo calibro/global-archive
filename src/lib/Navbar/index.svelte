@@ -74,7 +74,7 @@
 				class="btn btn-outline-dark rounded-pill px-3 py-2 d-none d-md-flex align-items-center"
 				class:invisible={!$page.routeId.startsWith('explore')}
 				on:click={() => toggleFilters()}
-				><span class="me-1">Filters</span><i
+				><span class="me-1">Search</span><i
 					class="bi d-flex"
 					class:bi-plus={!$showFilters}
 					class:bi-x={$showFilters}
@@ -84,7 +84,7 @@
 				class="btn btn-light d-flex d-md-none"
 				class:invisible={!$page.routeId.startsWith('explore')}
 				on:click={() => toggleFilters()}
-				><i class="bi d-flex fs-2" class:bi-funnel={!$showFilters} class:bi-x-lg={$showFilters} />
+				><i class="bi d-flex fs-2" class:bi-search={!$showFilters} class:bi-x-lg={$showFilters} />
 			</button>
 		</div>
 	</div>
