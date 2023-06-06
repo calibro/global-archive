@@ -43,7 +43,7 @@
 			on:click={() => resetCf(group[0], $cfRecords.dims.get(group[0]))}
 		>
 			{#if $active_filters[group[0]]}
-				<i class="bi bi-eraser" />
+				<span class="badge bg-secondary">reset</span>
 			{/if}
 		</div>
 	</div>

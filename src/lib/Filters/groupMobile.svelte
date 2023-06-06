@@ -40,11 +40,11 @@
 </script>
 
 <div>
-	<div class="title d-flex rounded bg-dark text-white mb-1 p-2">
+	<div class="title d-flex rounded bg-dark text-white mb-1 p-2 align-items-center">
 		{group[0]}
 		<div on:click={() => resetCf(group[0], $cfRecords.dims.get(group[0]))}>
 			{#if $active_filters[group[0]]}
-				<i class="bi bi-eraser ms-2" />
+				<div class="badge bg-secondary ms-2">reset</div>
 			{/if}
 		</div>
 		<div class="ms-auto" on:click={toggle}>

@@ -6,6 +6,9 @@
 	import Search from '$lib/Search.svelte';
 	import { cfRecords, active_filters } from '$lib/stores';
 
+	let resetYearPicker;
+	let resetSearchForm;
+
 	$: cfGroups = [...Array.from($cfRecords.groups)];
 
 	$: startYear = $cfRecords.dims.get('Start year').bottom(1)[0]
@@ -15,7 +18,6 @@
 		? $cfRecords.dims.get('End year').top(1)[0]['End year']
 		: null;
 
-	$: console.log(startYear, endYear);
 	function update() {
 		cfGroups = [...Array.from($cfRecords.groups)];
 	}
@@ -89,6 +91,15 @@
 		update();
 	}
 
+	function resetFilterSearch() {
+		$cfRecords.dims.get('search').filterAll();
+		active_filters.update((d) => {
+			delete d['search'];
+			return d;
+		});
+		update();
+	}
+
 	function resetFilterDimension(key, dim) {
 		dim.filterAll();
 		// $active_filters[key] = null;
@@ -98,6 +109,14 @@
 			return d;
 		});
 		update();
+	}
+
+	function resetAllFilters() {
+		cfGroups.forEach((group) => {
+			resetFilterDimension(group[0], $cfRecords.dims.get(group[0]));
+		});
+		resetYearPicker();
+		resetSearchForm();
 	}
 </script>
 
@@ -110,11 +129,23 @@
 					{endYear}
 					on:resetCf={() => resetFilterYears()}
 					on:updateCf={(e) => filterYear(e)}
+					bind:resetYearPicker
 				/>
 			{/if}
-			<div class="ms-auto col-12 col-md-4 mt-3 mt-md-0">
-				<Search on:filterCf={(e) => filterSearch(e.detail)} />
+			<div class="ms-5 me-4 col-12 col-md mt-3 mt-md-0">
+				<Search
+					on:filterCf={(e) => filterSearch(e.detail)}
+					on:resetCf={() => resetFilterSearch()}
+					bind:resetSearchForm
+				/>
 			</div>
+			{#if Object.keys($active_filters).length}<div
+					class="ms-auto badge bg-secondary"
+					on:click={() => resetAllFilters()}
+				>
+					reset all filters
+				</div>
+			{/if}
 		</div>
 
 		<div class="overflow-hidden position-relative d-none d-md-flex">

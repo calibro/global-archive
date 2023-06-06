@@ -5,6 +5,7 @@
 	import { range } from 'd3-array';
 	export let startYear, endYear;
 
+	export const resetYearPicker = reset;
 	const dispatch = createEventDispatcher();
 
 	let selectedStartYear = { value: startYear, label: startYear.toString() };
@@ -82,7 +83,7 @@
 	</div>
 
 	{#if $active_filters['years']}
-		<div class="ms-2 cursor-pointer" on:click={reset}><i class="bi bi-eraser" /></div>
+		<div class="badge bg-secondary ms-2 cursor-pointer" on:click={reset}>reset</div>
 	{/if}
 </div>
 

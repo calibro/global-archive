@@ -1,18 +1,33 @@
 <script>
-	import { slide } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
+	import { active_filters } from '$lib/stores';
+
+	export const resetSearchForm = reset;
+	let searchText;
 
 	const dispatch = createEventDispatcher();
 
-	let searchText;
 	function filterDimension() {
-		filterCf(searchText);
+		if (searchText) {
+			filterCf(searchText);
+		} else {
+			resetCf();
+		}
 	}
 
 	function filterCf(value) {
 		dispatch('filterCf', {
 			value: value
 		});
+	}
+
+	function reset() {
+		searchText = null;
+		resetCf();
+	}
+
+	function resetCf() {
+		dispatch('resetCf');
 	}
 </script>
 
