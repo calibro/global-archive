@@ -18,8 +18,8 @@
 
 	$: facets = [...group[1].all()].sort((a, b) =>
 		ascending(
-			$groupsDict[group[0]].find((d) => d.id === a.key).fields.Name,
-			$groupsDict[group[0]].find((d) => d.id === b.key).fields.Name
+			$groupsDict[group[0]].find((d) => d.id === a.key).fields.Name.toLowerCase(),
+			$groupsDict[group[0]].find((d) => d.id === b.key).fields.Name.toLowerCase()
 		)
 	);
 
