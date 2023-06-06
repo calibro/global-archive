@@ -132,7 +132,7 @@
 					bind:resetYearPicker
 				/>
 			{/if}
-			<div class="ms-5 me-4 col-12 col-md mt-3 mt-md-0">
+			<div class="ms-0 me-0 ms-md-5 me-md-4 col-12 col-md mt-3 mt-md-0 order-2 order-md-1">
 				<Search
 					on:filterCf={(e) => filterSearch(e.detail)}
 					on:resetCf={() => resetFilterSearch()}
@@ -140,7 +140,7 @@
 				/>
 			</div>
 			{#if Object.keys($active_filters).length}<div
-					class="ms-auto badge bg-secondary"
+					class="ms-auto me-md-0 me-auto mb-3 mb-md-0 badge bg-secondary order-0 order-md-2"
 					on:click={() => resetAllFilters()}
 				>
 					reset all filters

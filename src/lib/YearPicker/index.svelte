@@ -58,7 +58,7 @@
 	}
 </script>
 
-<div class="d-flex align-items-center themed">
+<div class="d-flex align-items-center themed order-1 order-md-0">
 	<div class="me-2">Period:</div>
 	<div class="select">
 		<Select
