@@ -15,6 +15,7 @@
 		? $cfRecords.dims.get('End year').top(1)[0]['End year']
 		: null;
 
+	$: console.log(startYear, endYear);
 	function update() {
 		cfGroups = [...Array.from($cfRecords.groups)];
 	}
@@ -103,7 +104,7 @@
 <div class="filtersContainer border border-dark rounded my-2" transition:slide>
 	<div class="px-3 px-md-4 pt-4">
 		<div class="d-flex align-items-start align-items-md-center flex-column flex-md-row">
-			{#if startYear && endYear}
+			{#if Number.isInteger(startYear) && Number.isInteger(endYear)}
 				<YearPicker
 					{startYear}
 					{endYear}
