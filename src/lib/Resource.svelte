@@ -84,8 +84,20 @@
 				<p class="BespokeSerif mt-md-3 mt-0 mb-3 border-bottom border-dark py-3">
 					{resource.fields['Brief description of collection']}
 				</p>
+				{#if resource.fields['Link to additional information']}
+					<p class="mt-0 mb-3 border-bottom border-dark pb-3">
+						Additional infomation: {#each resource.fields['Link to additional information'].split('\n') as link, i}
+							<a
+								class="btn btn-primary btn-sm me-2"
+								href={link}
+								target="_blank"
+								rel="noopener noreferrer">{i + 1}</a
+							>
+						{/each}
+					</p>
+				{/if}
 				<div class="row">
-					<div class="col-12 metaContainer">
+					<div class="col-12 metaContainer pb-3">
 						{#each METADATA as meta}
 							<h6 class="mb-1">
 								{meta}
@@ -105,7 +117,7 @@
 				</div>
 
 				<div class="border-top border-dark py-3">
-					<h6 class="fw-light mb-1">Region concerned</h6>
+					<h6 class="mb-1">Region concerned</h6>
 					<p class="BespokeSerif">
 						{$groupsDict['Region concerned']
 							.filter((d) => resource.fields['Region concerned'].includes(d.id))
