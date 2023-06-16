@@ -140,7 +140,7 @@
 				/>
 			</div>
 			{#if Object.keys($active_filters).length}<div
-					class="ms-auto me-md-0 me-auto mb-3 mb-md-0 badge bg-secondary order-0 order-md-2"
+					class="ms-auto me-md-0 me-auto mb-3 mb-md-0 badge bg-secondary order-0 order-md-2 cursor-pointer"
 					on:click={() => resetAllFilters()}
 				>
 					reset all filters
