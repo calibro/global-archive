@@ -98,6 +98,6 @@
 	}
 
 	.select {
-		flex: 0 0 90px;
+		flex: 0 0 95px;
 	}
 </style>
